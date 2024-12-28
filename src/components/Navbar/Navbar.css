@@ -1,0 +1,53 @@
+.navbar-container {}
+
+.navbar-wrapper {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.language {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-container {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    color: grey;
+}
+
+.logo-container h1 {
+    font-size: 30px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.cart-container {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.register-container,
+.login-container {
+    font-size: 20px;
+    font-weight: 500;
+}
