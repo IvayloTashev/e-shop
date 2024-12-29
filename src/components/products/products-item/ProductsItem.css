@@ -1,0 +1,32 @@
+.producs-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 0 0 calc(25% - 10px);
+    margin-top: 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-holder {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+}
+
+.product-image-holder img {
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
+    
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
