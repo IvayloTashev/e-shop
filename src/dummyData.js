@@ -20,4 +20,22 @@ export const sliderItems = [
         title: 'Steelseries',
         description: 'Unleash the Gamer Within with Steelseries Gaming Gear',
     }
-]
+];
+
+export const categories = [
+    {
+      id: 1,
+      image: "https://desktop.bg/system/images/463687/normal/STEELHEAD61557.jpg",
+      title: "Headsets",
+    },
+    {
+      id: 2,
+      image: "https://desktop.bg/system/images/427020/normal/RZ0304500100R3M1.jpg",
+      title: "keyboards",
+    },
+    {
+      id: 3,
+      image: "https://desktop.bg/system/images/249349/normal/910005272.jpg",
+      title: "Mice",
+    },
+  ];
