@@ -37,7 +37,7 @@
     right: 10px;
 }
 
-.wrapper-container {
+.slider-wrapper-container {
     height: 100%;
     display: flex;
 }
@@ -49,18 +49,18 @@
     height: 100vh;
 }
 
-.image-container {
+.slide-image-container {
     flex: 0 0 60%;
     height: 100%;
 }
 
-.image-container img {
+.slide-image-container img {
     height: 80%;
     width: 100%;
     object-fit: cover;
 }
 
-.info-container {
+.slide-info-container {
     flex: 0 0 40%;
     padding: 50px;
     display: flex;
@@ -68,17 +68,17 @@
     gap: 20px;
 }
 
-.info-container h1 {
+.slide-info-container h1 {
     font-size: 80px;
 }
 
-.info-container p {
+.slide-info-container p {
     font-size: 30px;
     font-weight: 500;
     letter-spacing: 2px;
 }
 
-.info-container button {
+.slide-info-container button {
     padding: 5px 15px;
     font-size: 20px;
     background-color: none;

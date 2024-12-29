@@ -20,7 +20,7 @@ const Slider = () => {
                 <ArrowLeftIcon />
             </div>
 
-            <div className='wrapper-container'
+            <div className='slider-wrapper-container'
                 style={{
                     transform: `translateX(-${slideIndex * 100}vw)`,
                     transition: 'transform 1.5s ease-in-out',
@@ -29,11 +29,11 @@ const Slider = () => {
                 {sliderItems.map((item) => (
                     <div className='slide-container' key={item.id}>
 
-                        <div className='image-container'>
+                        <div className='slide-image-container'>
                             <img src={item.image} alt="" />
                         </div>
 
-                        <div className='info-container'>
+                        <div className='slide-info-container'>
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
                             <button>BUY NOW</button>

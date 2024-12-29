@@ -4,12 +4,12 @@ import './CategoryItem.css'
 const CategoryItem = ({ item }) => {
 
     return (
-        <div className='category-item-container' key={item.id}>
-            <div className='image-holder'>
+        <div className='category-item-container'>
+            <div className='category-image-holder'>
                 <img src={item.image} alt="" />
             </div>
 
-            <div className='info-holder'>
+            <div className='category-info-holder'>
                 <p>{item.title}</p>
                 <button>BUY NOW</button>
             </div>
