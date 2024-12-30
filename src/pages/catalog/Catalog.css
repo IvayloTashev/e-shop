@@ -1,0 +1,27 @@
+.catalog-container h1 {
+    padding: 10px 20px;
+    font-size: 35px;
+}
+
+.catalog-filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.filter-holder {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.filter-holder p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.filter-holder select {
+    padding: 5px;
+}
+
+
