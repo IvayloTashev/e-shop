@@ -4,10 +4,14 @@
     gap: 10px;
     flex: 0 0 calc(25% - 10px);
     margin-top: 20px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.producs-item-container:hover {
+    border: 2px solid rgb(151, 253, 219);
 }
 
 .product-image-holder {
@@ -20,13 +24,30 @@
     width: 100%;
     object-fit: cover;
     margin: auto;
-    
+
 }
 
 .product-info-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
+}
+
+.product-info-container button {
+    padding: 5px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    color: black;
+    border: none;
+}
+
+.product-info-container button * {
+    width: 27px;
+    height: 23px;
+}
+
+.product-info-container button:hover {
+    background-color: rgb(195, 253, 234);
 }

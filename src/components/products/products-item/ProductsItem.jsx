@@ -11,9 +11,9 @@ const ProductsItem = ({ item }) => {
             </div>
 
             <div className='product-info-container'>
-                <ShoppingCartOutlined />
-                <SearchOutlined />
-                <FavoriteBorderOutlined />
+                <button><ShoppingCartOutlined /></button>
+                <button><SearchOutlined /></button>
+                <button><FavoriteBorderOutlined /></button>
             </div>
         </div>
     )
