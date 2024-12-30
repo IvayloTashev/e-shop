@@ -36,16 +36,15 @@
 }
 
 .product-info-container button {
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(233, 233, 233);
-    border-radius: 5px;
+    border-radius: 50%;
     color: black;
     border: none;
-}
-
-.product-info-container button * {
-    width: 27px;
-    height: 23px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-info-container button:hover {
