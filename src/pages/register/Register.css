@@ -1,0 +1,65 @@
+.register-container {
+    width: 100vw;
+    height: 100vh;
+    background: url("../../../public/images/sign-up.webp") center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-wrapper {
+    width: 40%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-wrapper h1 {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.register-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-wrapper form input {
+    width: 70%;
+    padding: 10px 20px;
+    border: 1px solid teal;
+    border-radius: 5px;
+    outline: none;
+}
+
+.register-wrapper form p {
+    width: 70%;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-wrapper form button {
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-top: 10px;
+}
+
+.register-wrapper form button:hover {
+    background-color: rgb(0, 180, 180);
+}
