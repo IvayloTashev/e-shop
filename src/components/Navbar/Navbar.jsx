@@ -25,15 +25,15 @@ const Navbar = () => {
                 </div>
 
                 <div className='navbar-right'>
-                    <div className='register-container'>
+                    <div className='navbar-register-container'>
                         Register
                     </div>
 
-                    <div className='login-container'>
+                    <div className='navbar-login-container'>
                         Sing in
                     </div>
 
-                    <div className='cart-container'>
+                    <div className='navbar-cart-container'>
                         <Badge badgeContent={4} color="secondary">
                             <ShoppingCartIcon />
                         </Badge>

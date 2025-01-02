@@ -1,0 +1,133 @@
+.cart-wrapper {
+    padding: 20px;
+}
+
+.cart-wrapper h1 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 40px;
+}
+
+.top-cart-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.top-cart-btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.top-cart-btn:hover {
+    background-color: rgb(2, 187, 187);
+}
+
+.top-cart-description {
+    display: flex;
+    gap: 20px;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.bot-cart-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-info-section {
+    flex: 3;
+}
+
+.cart-summary-section {
+    flex: 1;
+}
+
+.cart-product-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-product-info-container img {
+    flex: 1;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.cart-product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.cart-product-price {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-product-price p {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.cart-product-info div {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.separator {
+    background-color: rgb(192, 192, 192);
+    height: 1px;
+}
+
+.cart-summary-section {
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 50px;
+    font-size: 25px;
+
+}
+
+.cart-summary-section h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cart-summary-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-summary-section button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.cart-summary-section button:hover {
+    background-color: teal;
+}

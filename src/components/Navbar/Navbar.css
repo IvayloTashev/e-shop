@@ -39,13 +39,13 @@
     border-bottom: 3px solid black;
 }
 
-.cart-container {
+.navbar-cart-container {
     font-size: 20px;
     cursor: pointer;
 }
 
-.register-container,
-.login-container {
+.navbar-register-container,
+.navbar-login-container {
     font-size: 20px;
     font-weight: 500;
 }
