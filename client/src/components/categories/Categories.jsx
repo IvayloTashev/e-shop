@@ -1,7 +1,7 @@
 import React from 'react'
 import './Categories.css'
 import { categories } from '../../dummyData.js'
-import CategoryItem from './category-item/CategoryItem'
+import CategoryItem from './category-item/CategoryItem.jsx'
 
 const Categories = () => {
     return (

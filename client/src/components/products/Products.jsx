@@ -2,7 +2,7 @@ import React from 'react'
 import './Products.css'
 
 import { popularProducts } from '../../dummyData.js'
-import ProductsItem from './products-item/ProductsItem'
+import ProductsItem from './products-item/ProductsItem.jsx'
 
 const Products = () => {
     return (
