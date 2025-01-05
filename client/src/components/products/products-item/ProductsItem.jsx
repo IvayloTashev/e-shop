@@ -7,7 +7,7 @@ const ProductsItem = ({ item }) => {
         <div className='producs-item-container'>
 
             <div className='product-image-holder'>
-                <img src={item.image} alt="" />
+                <img src={item.img} alt="" />
             </div>
 
             <div className='product-info-container'>
