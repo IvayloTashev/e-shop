@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Catalog.css'
 
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -9,8 +9,26 @@ import Announcement from '../../components/announcement/Announcement'
 import Products from '../../components/products/Products'
 import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
+import { useLocation } from 'react-router-dom';
 
 const Catalog = () => {
+    const location = useLocation();
+    const category = location.pathname.split('/')[2];
+
+    const [filters, setFilter] = useState({});
+    const [sort, setSort] = useState("newest");
+
+    const handleFilters = (event) => {
+        const value = event.target.value;
+
+        setFilter({
+            ...filters,
+            [event.target.name]: value
+        })
+    };
+
+    console.log(filters);
+
     return (
         <div className='catalog-container'>
             <Announcement />
@@ -21,30 +39,30 @@ const Catalog = () => {
             <div className='catalog-filter-container'>
                 <div className='filter-holder'>
                     <p>Filter Products:</p>
-                    <select>
-                        <option value="0">Brand:</option>
-                        <option value="1">Logitech</option>
-                        <option value="2">Razer</option>
-                        <option value="3">Steelseries</option>
+                    <select name='brand' onChange={handleFilters}>
+                        <option value="">Brand:</option>
+                        <option value="Logitech">Logitech</option>
+                        <option value="Razer">Razer</option>
+                        <option value="SteelSeries">Steelseries</option>
                     </select>
-                    <select>
-                        <option value="0">Color:</option>
-                        <option value="1">Black</option>
-                        <option value="2">White</option>
-                        <option value="3">Blue</option>
+                    <select name='color' onChange={handleFilters}>
+                        <option value="">Color:</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Blue">Blue</option>
                     </select>
                 </div>
                 <div className='filter-holder'>
                     <p>Sort Products:</p>
-                    <select>
-                        <option value="0">Newest:</option>
-                        <option value="1">Price - low to high</option>
-                        <option value="2">Price - high to low</option>
+                    <select onChange={(e) => setSort(e.target.value)}>
+                        <option value="newest">Newest:</option>
+                        <option value="lowToHigh">Price - low to high</option>
+                        <option value="highToLow">Price - high to low</option>
                     </select>
                 </div>
             </div>
 
-            <Products />
+            <Products category={category} filters={filters} sort={sort} />
             <Newsletter />
             <Footer />
         </div>
