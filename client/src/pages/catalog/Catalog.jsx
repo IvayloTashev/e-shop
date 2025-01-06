@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
 import './Catalog.css'
-
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import React, { useState } from 'react'
 
 import Navbar from '../../components/navbar/Navbar'
 import Announcement from '../../components/announcement/Announcement'
@@ -27,14 +24,12 @@ const Catalog = () => {
         })
     };
 
-    console.log(filters);
-
     return (
         <div className='catalog-container'>
             <Announcement />
             <Navbar />
 
-            <h1>Products</h1>
+            <h1>Category: {category}</h1>
 
             <div className='catalog-filter-container'>
                 <div className='filter-holder'>
