@@ -7,6 +7,8 @@ import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
 import { useLocation } from 'react-router-dom'
 import { getOneProduct } from '../../hooks/useProducts'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartRedux'
 
 const Details = () => {
     const location = useLocation();
@@ -14,6 +16,7 @@ const Details = () => {
     const [product] = getOneProduct(id);
     const [quantity, setQuantity] = useState(1);
     const [color, setColor] = useState(null);
+    const dispatch = useDispatch();
 
     const handleQuality = (type) => {
         if (type === "decrease") {
@@ -25,6 +28,10 @@ const Details = () => {
             setQuantity(quantity + 1);
         }
     };
+
+    const handleAddToCart = () => {
+        dispatch(addProduct({ ...product, quantity, color }));
+    }
 
     return (
         <div className='details-container'>
@@ -58,7 +65,7 @@ const Details = () => {
                             <button className='add' onClick={() => handleQuality('increase ')}>+</button>
                         </div>
 
-                        <button>ADD TO CART</button>
+                        <button onClick={handleAddToCart}>ADD TO CART</button>
                     </div>
 
                 </div>
