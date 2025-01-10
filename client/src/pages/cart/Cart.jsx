@@ -3,8 +3,11 @@ import './Cart.css'
 import Navbar from '../../components/navbar/Navbar'
 import Announcement from '../../components/announcement/Announcement'
 import Footer from '../../components/footer/Footer'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
+    const cart = useSelector(state => state.cart);
+
     return (
         <div className='cart-container'>
             <Announcement />
@@ -24,73 +27,33 @@ const Cart = () => {
 
                 <div className='bot-cart-section'>
                     <div className='cart-info-section'>
-                        <div className='cart-product-info-container'>
-                            <img src="https://desktop.bg/system/images/189888/normal/RZ0102540100R3M1.jpg" alt="" />
-                            <div className='cart-product-info'>
-                                <p><b>Product:</b> Razer - DeathAdder Essential</p>
-                                <p><b>ID:</b> 123123123</p>
-                                <div></div>
-                                <p><b>Brand:</b> Razer</p>
-                            </div>
-
-                            <div className='cart-product-price'>
-                                <div className='amount-container'>
-                                    <p className='remove'>-</p>
-                                    <p className='amount'>1</p>
-                                    <p className='add'>+</p>
+                        {cart.products.map(product => (
+                            <div className='cart-product-info-container'>
+                                <img src={product.img} alt="" />
+                                <div className='cart-product-info'>
+                                    <p><b>Product:</b> {product.title}</p>
+                                    <p><b>ID:</b> {product._id}</p>
+                                    <p><b>Color:</b> {product.color}</p>
+                                    <p><b>Brand:</b> {product.brand}</p>
                                 </div>
-                                <p>$ 70.00</p>
-                            </div>
-                        </div>
 
-                        <div className='separator'></div>
-
-                        <div className='cart-product-info-container'>
-                            <img src="https://desktop.bg/system/images/189888/normal/RZ0102540100R3M1.jpg" alt="" />
-                            <div className='cart-product-info'>
-                                <p><b>Product:</b> Razer - DeathAdder Essential</p>
-                                <p><b>ID:</b> 123123123</p>
-                                <div></div>
-                                <p><b>Brand:</b> Razer</p>
-                            </div>
-
-                            <div className='cart-product-price'>
-                                <div className='amount-container'>
-                                    <p className='remove'>-</p>
-                                    <p className='amount'>1</p>
-                                    <p className='add'>+</p>
+                                <div className='cart-product-price'>
+                                    <div className='amount-container'>
+                                        <p className='remove'>-</p>
+                                        <p className='amount'>{product.quantity}</p>
+                                        <p className='add'>+</p>
+                                    </div>
+                                    <p>$ {product.price * product.quantity}</p>
                                 </div>
-                                <p>$ 70.00</p>
                             </div>
-                        </div>
-
-                        <div className='separator'></div>
-
-                        <div className='cart-product-info-container'>
-                            <img src="https://desktop.bg/system/images/189888/normal/RZ0102540100R3M1.jpg" alt="" />
-                            <div className='cart-product-info'>
-                                <p><b>Product:</b> Razer - DeathAdder Essential</p>
-                                <p><b>ID:</b> 123123123</p>
-                                <div></div>
-                                <p><b>Brand:</b> Razer</p>
-                            </div>
-
-                            <div className='cart-product-price'>
-                                <div className='amount-container'>
-                                    <p className='remove'>-</p>
-                                    <p className='amount'>1</p>
-                                    <p className='add'>+</p>
-                                </div>
-                                <p>$ 70.00</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                    
+
                     <div className='cart-summary-section'>
                         <h1>Order summary</h1>
                         <div className='cart-summary-info'>
                             <p>Subtotal</p>
-                            <p>$ 80</p>
+                            <p>$ {cart.total}</p>
                         </div>
                         <div className='cart-summary-info'>
                             <p>Estemated shipping</p>
@@ -102,7 +65,7 @@ const Cart = () => {
                         </div>
                         <div className='cart-summary-info'>
                             <p><b>Total</b></p>
-                            <p><b>$ 80</b></p>
+                            <p><b>$ {cart.total}</b></p>
                         </div>
                         <button>Chekout now</button>
                     </div>

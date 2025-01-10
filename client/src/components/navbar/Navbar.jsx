@@ -4,13 +4,10 @@ import { Search } from '@mui/icons-material'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector } from 'react-redux';
+import { Link } from "react-router";
 
 const Navbar = () => {
-
     const quantity = useSelector(state => state.cart.quantity);
-
-    console.log(quantity);
-    
 
     return (
         <div className='navbar-container'>
@@ -41,9 +38,11 @@ const Navbar = () => {
                     </div>
 
                     <div className='navbar-cart-container'>
-                        <Badge badgeContent={quantity} color="secondary">
-                            <ShoppingCartIcon />
-                        </Badge>
+                        <Link to={'/cart'}>
+                            <Badge badgeContent={quantity} color="secondary">
+                                <ShoppingCartIcon />
+                            </Badge>
+                        </Link>
                     </div>
                 </div>
 
