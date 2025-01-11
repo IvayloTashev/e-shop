@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { publicRequest, userRequest } from '../constants/requestMethods'
+import { publicRequest } from '../constants/requestMethods'
 
 export function getAllProducts(category) {
     const [products, setProducts] = useState([]);

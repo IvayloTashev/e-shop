@@ -28,7 +28,7 @@ const Cart = () => {
                 <div className='bot-cart-section'>
                     <div className='cart-info-section'>
                         {cart.products.map(product => (
-                            <div className='cart-product-info-container'>
+                            <div className='cart-product-info-container' key={product._id}>
                                 <img src={product.img} alt="" />
                                 <div className='cart-product-info'>
                                     <p><b>Product:</b> {product.title}</p>
