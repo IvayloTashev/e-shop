@@ -58,6 +58,11 @@
     background-color: rgb(0, 180, 180);
 }
 
+.login-wrapper form button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
 .login-links {
     display: flex;
     padding: 10px;
@@ -75,4 +80,9 @@
 
 .login-links a:hover {
     color: teal;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 18px;
 }
