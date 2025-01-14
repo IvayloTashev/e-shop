@@ -1,3 +1,9 @@
 .home-container {
     flex: 4;
 }
+
+.home-widgets {
+    display: flex;
+    padding: 20px 50px;
+    gap: 30px;
+}
