@@ -1,0 +1,66 @@
+.widget-large-container {
+    flex: 2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px 20px;
+}
+
+.widget-large-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.widget-large-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.widget-large-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    min-width: 75px;
+}
+
+.widget-large-btn.Approved {
+    background-color: rgb(185, 229, 185);
+    color: green;
+}
+
+.widget-large-btn.Pending {
+    background-color: rgb(210, 213, 255);
+    color: rgb(0, 17, 255);
+
+}
+
+.widget-large-btn.Declined {
+    background-color: rgb(255, 206, 206);
+    color: rgb(255, 0, 0);
+}
+
+.widget-large-table {
+    width: 100%;
+    border-spacing: 20px;
+}
+
+.widget-large-th {
+    text-align: left;
+}
+
+.widget-large-user-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.widget-large-name {
+    font-weight: 600;
+}
+
+.widget-large-date,
+.widget-large-amount {
+    opacity: 0.7;
+    font-weight: 300;
+
+}
