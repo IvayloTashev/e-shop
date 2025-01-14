@@ -1,0 +1,48 @@
+.widget-small-container {
+    flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.widget-small-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.widget-small-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget-small-list-item {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.widget-small-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.widget-small-name {
+    font-weight: 600;
+}
+
+.widget-small-job-title {
+    opacity: 0.6;
+}
+
+.widget-small-btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
