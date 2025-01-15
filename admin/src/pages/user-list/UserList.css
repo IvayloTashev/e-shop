@@ -1,0 +1,55 @@
+.user-list-container {
+    flex: 4;
+}
+
+.user-list-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.user-list-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-list-btns {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-list-edit {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    min-width: 62px;
+}
+
+.user-list-delete {
+    background-color: rgb(167, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    min-width: 62px;
+}
+
+.user-list-edit:hover {
+    background-color: rgb(2, 190, 2);
+}
+
+.user-list-delete:hover {
+    background-color: rgb(216, 0, 0);
+}

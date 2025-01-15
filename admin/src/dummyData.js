@@ -12,3 +12,117 @@ export const dummyData = [
     { name: 'Nov', "Active User": 4100 },
     { name: 'Dec', "Active User": 4500 }
 ];
+
+export const userRows = [
+    {
+        id: 1, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 2, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 3, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 4, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 5, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 6, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 7, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 8, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 9, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 10, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 11, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 12, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 13, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+
+    {
+        id: 14, username: 'Brut Cosmos',
+        avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+        email: 'brutcosmos.gmail.com',
+        status: "active",
+        transaction: "150.00"
+    },
+];
