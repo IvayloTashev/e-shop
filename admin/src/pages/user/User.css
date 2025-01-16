@@ -1,0 +1,160 @@
+.user-container {
+    flex: 4;
+    padding: 20px 50px;
+}
+
+.user-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-add-button {
+    border: none;
+    padding: 10px 20px;
+    background-color: teal;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+.user-info-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.user-info {
+    flex: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.user-update {
+    flex: 2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.user-info-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.user-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.user-info-top-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.user-title {
+    opacity: 0.7;
+}
+
+.user-info-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.user-info-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+.user-single-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+}
+
+.user-update {
+    padding: 20px;
+}
+
+.user-update-title {
+    margin-bottom: 20px;
+}
+
+.user-update-form {
+    display: flex;
+}
+
+.user-form-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-update-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.user-update-label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.user-update-input {
+    border: none;
+    border-bottom: 1px solid grey;
+    max-width: 400px;
+    padding: 5px 0;
+}
+
+.user-update-input:focus {
+    outline: none;
+}
+
+.user-update-image {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-update-image input {
+    margin-left: 40px;
+}
+
+.user-form-button {
+    padding: 10px 20px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+}
