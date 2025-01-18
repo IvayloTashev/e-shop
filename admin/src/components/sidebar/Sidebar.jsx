@@ -1,5 +1,6 @@
 import './Sidebar.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import LineStyleIcon from '@mui/icons-material/LineStyle';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
@@ -21,9 +22,9 @@ const Sidebar = () => {
                 <div className='sidebar-menu'>
                     <h3 className='sidebar-title'>Dashboard</h3>
                     <ul className='sidebar-list'>
-                        <li className='sidebar-list-item'><LineStyleIcon />Home</li>
-                        <li className='sidebar-list-item'><TimelineIcon />Analytics</li>
-                        <li className='sidebar-list-item'><TrendingUpIcon />Sales</li>
+                        <Link to={'/'}><li className='sidebar-list-item'><LineStyleIcon />Home</li></Link>
+                        <Link><li className='sidebar-list-item'><TimelineIcon />Analytics</li></Link>
+                        <Link><li className='sidebar-list-item'><TrendingUpIcon />Sales</li></Link>
                     </ul>
                 </div>
             </div>
@@ -32,10 +33,10 @@ const Sidebar = () => {
                 <div className='sidebar-menu'>
                     <h3 className='sidebar-title'>Quick Menu</h3>
                     <ul className='sidebar-list'>
-                        <li className='sidebar-list-item'><PersonIcon />Users</li>
-                        <li className='sidebar-list-item'><StorefrontIcon />Products</li>
-                        <li className='sidebar-list-item'><AttachMoneyIcon />Transactions</li>
-                        <li className='sidebar-list-item'><EqualizerIcon />Reports</li>
+                        <Link to={'/users'}><li className='sidebar-list-item'><PersonIcon />Users</li></Link>
+                        <Link><li className='sidebar-list-item'><StorefrontIcon />Products</li></Link>
+                        <Link><li className='sidebar-list-item'><AttachMoneyIcon />Transactions</li></Link>
+                        <Link><li className='sidebar-list-item'><EqualizerIcon />Reports</li></Link>
                     </ul>
                 </div>
             </div>
@@ -44,9 +45,9 @@ const Sidebar = () => {
                 <div className='sidebar-menu'>
                     <h3 className='sidebar-title'>Notifications</h3>
                     <ul className='sidebar-list'>
-                        <li className='sidebar-list-item'><EmailIcon />Mail</li>
-                        <li className='sidebar-list-item'><DynamicFeedIcon />Feedback</li>
-                        <li className='sidebar-list-item'><MessageIcon />Messages</li>
+                        <Link><li className='sidebar-list-item'><EmailIcon />Mail</li></Link>
+                        <Link><li className='sidebar-list-item'><DynamicFeedIcon />Feedback</li></Link>
+                        <Link><li className='sidebar-list-item'><MessageIcon />Messages</li></Link>
                     </ul>
                 </div>
             </div>
@@ -55,9 +56,9 @@ const Sidebar = () => {
                 <div className='sidebar-menu'>
                     <h3 className='sidebar-title'>Staff</h3>
                     <ul className='sidebar-list'>
-                        <li className='sidebar-list-item'><WorkIcon />Manage</li>
-                        <li className='sidebar-list-item'><TimelineIcon />Analytics</li>
-                        <li className='sidebar-list-item'><ReportIcon />Reports</li>
+                        <Link><li className='sidebar-list-item'><WorkIcon />Manage</li></Link>
+                        <Link><li className='sidebar-list-item'><TimelineIcon />Analytics</li></Link>
+                        <Link><li className='sidebar-list-item'><ReportIcon />Reports</li></Link>
                     </ul>
                 </div>
             </div>
