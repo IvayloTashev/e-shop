@@ -5,13 +5,16 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from 'react-router-dom'
 
 const User = () => {
     return (
         <div className='user-container'>
             <div className='user-title-container'>
                 <h1 className='user-title'>Edit User</h1>
-                <button className='user-add-button'>Create</button>
+                <Link to={'/createUser'}>
+                    <button className='user-add-button'>Create</button>
+                </Link>
             </div>
             <div className='user-info-container'>
                 <div className='user-info'>
