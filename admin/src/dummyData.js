@@ -126,3 +126,76 @@ export const userRows = [
         transaction: "150.00"
     },
 ];
+
+export const productRows = [
+    {
+        id: 1, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 2, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 3, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 4, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 5, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 6, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 7, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 8, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 9, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+    {
+        id: 10, name: 'Razer Deathadder',
+        image: 'https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png',
+        stock: 123,
+        status: "active",
+        price: "150.00"
+    },
+];

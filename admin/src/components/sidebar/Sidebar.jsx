@@ -34,7 +34,7 @@ const Sidebar = () => {
                     <h3 className='sidebar-title'>Quick Menu</h3>
                     <ul className='sidebar-list'>
                         <Link to={'/users'}><li className='sidebar-list-item'><PersonIcon />Users</li></Link>
-                        <Link><li className='sidebar-list-item'><StorefrontIcon />Products</li></Link>
+                        <Link to={'/products'}><li className='sidebar-list-item'><StorefrontIcon />Products</li></Link>
                         <Link><li className='sidebar-list-item'><AttachMoneyIcon />Transactions</li></Link>
                         <Link><li className='sidebar-list-item'><EqualizerIcon />Reports</li></Link>
                     </ul>
