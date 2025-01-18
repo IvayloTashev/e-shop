@@ -4,7 +4,6 @@ import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } f
 
 
 const Chart = ({ title, data, dataKey, grid }) => {
-
     return (
         <div className='chart-container'>
             <div className='chart'>
@@ -15,7 +14,6 @@ const Chart = ({ title, data, dataKey, grid }) => {
                         <Line type="monotone" dataKey={dataKey} stroke='#5a5ad1' />
                         <Tooltip />
                         {grid && <CartesianGrid stroke='#e0dfdf' strokeDasharray='5 5' />}
-
                     </LineChart>
                 </ResponsiveContainer>
             </div>
