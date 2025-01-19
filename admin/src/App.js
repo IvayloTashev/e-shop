@@ -9,13 +9,14 @@ import CreateUser from './pages/create-user/CreateUser';
 import ProductsList from './pages/products-list/ProductsList';
 import Product from './pages/product/Product';
 import CreateProduct from './pages/create-product/CreateProduct';
+import Login from './pages/login/Login';
 
 
 function App() {
+
     return (
         <div>
             <Topbar />
-
             <div className='app-container'>
                 <Sidebar />
                 <Routes>
@@ -28,10 +29,10 @@ function App() {
                     <Route path='/products' element={<ProductsList />} />
                     <Route path='/product/:productId' element={<Product />} />
                     <Route path='/createProduct' element={<CreateProduct />} />
+
+                    <Route path='/login' element={<Login />} />
                 </Routes>
-
             </div>
-
         </div>
     );
 }

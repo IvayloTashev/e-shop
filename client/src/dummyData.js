@@ -25,7 +25,7 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    image: "https://desktop.bg/system/images/463687/normal/STEELHEAD61557.jpg",
+    image: "https://cdn.ozone.bg/media/catalog/product/cache/1/image/400x498/a4e40ebdc3e371adff845072e1c73f37/g/e/d994dcfc650c274cb0547a6cb58a5996/geyming-slushalki-hyperx---cloud-ii-wireless--bezzhichni--cherni-chervni-31.jpg",
     title: "Headset",
     categories: "headset",
   },
