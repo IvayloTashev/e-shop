@@ -2,12 +2,16 @@ import axios from "axios"
 
 const BASE_URL = 'http://localhost:5000/api/';
 
-const storedData = localStorage.getItem('persist:root').currentUser;
+const storedData = localStorage.getItem('persist:root');
 
-const TOKEN = '';
+let TOKEN = '';
 
 if (storedData) {
-    TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser.accessToken;
+    const parsedData = JSON.parse(JSON.parse(storedData).user);
+    
+    if (parsedData.currentUser) {
+        TOKEN = parsedData.currentUser.accessToken;
+    }
 }
 
 export const publicRequest = axios.create({
