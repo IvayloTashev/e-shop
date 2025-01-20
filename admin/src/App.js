@@ -13,26 +13,46 @@ import Login from './pages/login/Login';
 
 
 function App() {
+    const storedData = localStorage.getItem('persist:root');
+
+    let admin = '';
+
+    if (storedData) {
+        const parsedData = JSON.parse(JSON.parse(storedData).user);
+
+        if (parsedData.currentUser) {
+            admin = parsedData.currentUser.accessToken;
+        }
+    }
 
     return (
         <div>
-            <Topbar />
-            <div className='app-container'>
-                <Sidebar />
-                <Routes>
-                    <Route path='/' element={<Home />} />
+            {admin ? (
+                <>
+                    <Topbar />
+                    <div className='app-container'>
+                        <Sidebar />
+                        <Routes>
+                            <Route path='/' element={<Home />} />
 
-                    <Route path='/users' element={<UserList />} />
-                    <Route path='/user/:UserId' element={<User />} />
-                    <Route path='/createUser' element={<CreateUser />} />
+                            <Route path='/users' element={<UserList />} />
+                            <Route path='/user/:UserId' element={<User />} />
+                            <Route path='/createUser' element={<CreateUser />} />
 
-                    <Route path='/products' element={<ProductsList />} />
-                    <Route path='/product/:productId' element={<Product />} />
-                    <Route path='/createProduct' element={<CreateProduct />} />
-
-                    <Route path='/login' element={<Login />} />
-                </Routes>
-            </div>
+                            <Route path='/products' element={<ProductsList />} />
+                            <Route path='/product/:productId' element={<Product />} />
+                            <Route path='/createProduct' element={<CreateProduct />} />
+                        </Routes>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <Routes>
+                        <Route path='/login' element={<Login />} />
+                        <Route path='*' element={<Login />} />
+                    </Routes>
+                </>
+            )}
         </div>
     );
 }
