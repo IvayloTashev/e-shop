@@ -23,18 +23,18 @@
     min-width: 75px;
 }
 
-.widget-large-btn.Approved {
+.widget-large-btn.approved {
     background-color: rgb(185, 229, 185);
     color: green;
 }
 
-.widget-large-btn.Pending {
+.widget-large-btn.pending {
     background-color: rgb(210, 213, 255);
     color: rgb(0, 17, 255);
 
 }
 
-.widget-large-btn.Declined {
+.widget-large-btn.declined {
     background-color: rgb(255, 206, 206);
     color: rgb(255, 0, 0);
 }

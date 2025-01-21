@@ -1,11 +1,21 @@
 import './WidgetLarge.css'
-import React from 'react'
+import { userRequest } from '../../constants/requestMethods';
+import React, { useEffect, useState } from 'react'
+import { format } from 'timeago.js'
 
 const WidgetLarge = () => {
-
-    const Button = ({type}) => {
+    const Button = ({ type }) => {
         return <button className={`widget-large-btn ` + type}>{type}</button>;
     }
+
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const res = await userRequest.get('orders');
+            setOrders(res.data);
+        })();
+    }, []);
 
     return (
         <div className='widget-large-container'>
@@ -17,47 +27,17 @@ const WidgetLarge = () => {
                     <th className='widget-large-th'>Amount</th>
                     <th className='widget-large-th'>Status</th>
                 </tr>
+                {orders.map((order) => (
+                    <tr className='widget-large-tr'>
+                        <td className='widget-large-user-info'>
+                            <p className='widget-large-name'>{order.userId}</p>
+                        </td>
+                        <td className='widget-large-date'>{format(order.createdAt)}</td>
+                        <td className='widget-large-amount'>${order.amount}</td>
+                        <td className='widget-large-status'><Button type={order.status} /></td>
+                    </tr>
+                ))}
 
-                <tr className='widget-large-tr'>
-                    <td className='widget-large-user-info'>
-                        <img className='widget-large-img' src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
-                        <p className='widget-large-name'>Brut Cosmos</p>
-                    </td>
-                    <td className='widget-large-date'>4 Jan 2022</td>
-                    <td className='widget-large-amount'>$69.00</td>
-                    <td className='widget-large-status'><Button type='Approved' /></td>
-                </tr>
-
-                <tr className='widget-large-tr'>
-                    <td className='widget-large-user-info'>
-                        <img className='widget-large-img' src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
-                        <p className='widget-large-name'>Brut Cosmos</p>
-                    </td>
-                    <td className='widget-large-date'>4 Jan 2022</td>
-                    <td className='widget-large-amount'>$69.00</td>
-                    <td className='widget-large-status'><Button type='Pending' /></td>
-                </tr>
-
-                <tr className='widget-large-tr'>
-                    <td className='widget-large-user-info'>
-                        <img className='widget-large-img' src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
-                        <p className='widget-large-name'>Brut Cosmos</p>
-                    </td>
-                    <td className='widget-large-date'>4 Jan 2022</td>
-                    <td className='widget-large-amount'>$69.00</td>
-                    <td className='widget-large-status'><Button type='Declined' /></td>
-                </tr>
-
-                
-                <tr className='widget-large-tr'>
-                    <td className='widget-large-user-info'>
-                        <img className='widget-large-img' src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
-                        <p className='widget-large-name'>Brut Cosmos</p>
-                    </td>
-                    <td className='widget-large-date'>4 Jan 2022</td>
-                    <td className='widget-large-amount'>$69.00</td>
-                    <td className='widget-large-status'><Button type='Declined' /></td>
-                </tr>
             </table>
         </div>
     )
