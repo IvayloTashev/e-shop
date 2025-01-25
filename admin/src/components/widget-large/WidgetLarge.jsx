@@ -28,7 +28,7 @@ const WidgetLarge = () => {
                     <th className='widget-large-th'>Status</th>
                 </tr>
                 {orders.map((order) => (
-                    <tr className='widget-large-tr'>
+                    <tr className='widget-large-tr' key={order._id}>
                         <td className='widget-large-user-info'>
                             <p className='widget-large-name'>{order.userId}</p>
                         </td>

@@ -4,6 +4,7 @@ import Chart from '../../components/chart/Chart'
 import { productDummyData } from '../../dummyData'
 import { Link } from 'react-router-dom'
 
+
 const Product = () => {
     return (
         <div className='product-container'>
@@ -51,7 +52,7 @@ const Product = () => {
                 <form className='product-bot-form'>
                     <div className='product-form-left'>
                         <label className='product-form-title'>Product Name</label>
-                        <input className='product-form-input' type="text" placeholder='Product Name'/>
+                        <input className='product-form-input' type="text" placeholder='Product Name' />
 
                         <label className='product-form-title'>In Stock</label>
                         <select className='product-form-input' name="instock" id="idStock">
