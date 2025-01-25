@@ -26,6 +26,9 @@ const FeatureInfo = () => {
         })();
     }, []);
 
+    console.log(income);
+    
+
     return (
         <div className='feature-info-container'>
             <div className='feature-info-item'>
@@ -33,7 +36,7 @@ const FeatureInfo = () => {
                 <div className='feature-info-money-container'>
                     <p className='feature-money'>${income[0]?.total}</p>
                     <p className='feature-money-rate'>%{(percentage).toFixed(2)}
-                        {percentage < 0 ? (<ArrowDownwardIcon />) : (<ArrowUpwardIcon />)}
+                        {percentage < 0 ? (<ArrowDownwardIcon className='negative-arrow' />) : (<ArrowUpwardIcon className='positive-arrow'/>)}
                     </p>
                     <p className='feature-money-compare'>Compared to last month</p>
                 </div>
