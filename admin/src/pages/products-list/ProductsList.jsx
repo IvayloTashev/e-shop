@@ -1,30 +1,40 @@
 import './ProductsList.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { productRows } from '../../dummyData'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../../redux/apiCalls';
 
 const ProductsList = () => {
+    const dispatch = useDispatch();
+    const productsAll = useSelector((state) => state.product.products)
     const [products, setProducts] = useState(productRows);
+
+    useEffect(() => {
+        (async () => {
+            getProducts(dispatch);
+        })();
+    }, [dispatch])
+
 
     const handleDelete = (id) => {
         setProducts(products.filter(item => item.id !== id));
     };
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
+        { field: '_id', headerName: 'ID', width: 250 },
         {
-            field: 'product', headerName: 'Product', width: 200, renderCell: (params) => {
+            field: 'product', headerName: 'Product', width: 300, renderCell: (params) => {
                 return (
                     <div className='product-list-info'>
-                        <img src={params.row.image} alt="productImage" />
-                        {params.row.name}
+                        <img src={params.row.img} alt="productImage" />
+                        {params.row.title}
                     </div>
                 )
             }
         },
-        { field: 'stock', headerName: 'Stock', width: 200 },
-        { field: 'status', headerName: 'Status', width: 130, },
+        { field: 'inStock', headerName: 'Stock', width: 200 },
         { field: 'price', headerName: 'Price', width: 200, },
         {
             field: 'action', headerName: 'Action', width: 180, renderCell: (params) => {
@@ -45,9 +55,10 @@ const ProductsList = () => {
     return (
         <div className='products-list-container'>
             <DataGrid
-                rows={products}
+                rows={productsAll}
                 disableRowSelectionOnClick
                 columns={columns}
+                getRowId={(row) => row._id}
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
