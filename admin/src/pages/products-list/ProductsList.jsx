@@ -1,15 +1,13 @@
 import './ProductsList.css'
 import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
-import { productRows } from '../../dummyData'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../../redux/apiCalls';
+import { getProducts, deleteProduct } from '../../redux/apiCalls';
 
 const ProductsList = () => {
     const dispatch = useDispatch();
-    const productsAll = useSelector((state) => state.product.products)
-    const [products, setProducts] = useState(productRows);
+    const products = useSelector((state) => state.product.products)
 
     useEffect(() => {
         (async () => {
@@ -19,7 +17,7 @@ const ProductsList = () => {
 
 
     const handleDelete = (id) => {
-        setProducts(products.filter(item => item.id !== id));
+        deleteProduct(dispatch, id)
     };
 
     const columns = [
@@ -43,7 +41,7 @@ const ProductsList = () => {
                         <Link to={'/product/' + params.row.id}>
                             <button className='product-list-edit'>Edit</button>
                         </Link>
-                        <button className='product-list-delete' onClick={() => handleDelete(params.row.id)}>Delete</button>
+                        <button className='product-list-delete' onClick={() => handleDelete(params.row._id)}>Delete</button>
                     </>
                 )
             }
@@ -55,7 +53,7 @@ const ProductsList = () => {
     return (
         <div className='products-list-container'>
             <DataGrid
-                rows={productsAll}
+                rows={products}
                 disableRowSelectionOnClick
                 columns={columns}
                 getRowId={(row) => row._id}
