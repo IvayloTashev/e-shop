@@ -26,9 +26,6 @@ const FeatureInfo = () => {
         })();
     }, []);
 
-    console.log(income);
-    
-
     return (
         <div className='feature-info-container'>
             <div className='feature-info-item'>

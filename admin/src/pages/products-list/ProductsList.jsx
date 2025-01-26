@@ -38,7 +38,7 @@ const ProductsList = () => {
             field: 'action', headerName: 'Action', width: 180, renderCell: (params) => {
                 return (
                     <>
-                        <Link to={'/product/' + params.row.id}>
+                        <Link to={'/product/' + params.row._id}>
                             <button className='product-list-edit'>Edit</button>
                         </Link>
                         <button className='product-list-delete' onClick={() => handleDelete(params.row._id)}>Delete</button>

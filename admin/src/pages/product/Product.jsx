@@ -1,11 +1,43 @@
 import './Product.css'
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Chart from '../../components/chart/Chart'
 import { productDummyData } from '../../dummyData'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { userRequest } from '../../constants/requestMethods'
 
 
 const Product = () => {
+    const location = useLocation();
+    const productId = location.pathname.split('/')[2];
+    const [productStats, setProductStats] = useState([]);
+
+    const product = useSelector((state) => state.product.products.find((product) => product._id === productId));
+    //TODO FIX IT LATER
+    const months = useMemo(
+        () => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    );
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const res = await userRequest.get(`orders/income?pid=${productId}`);
+                console.log(res);
+
+                const list = res.data.sort((a, b) => {
+                    return a._id - b._id
+                });
+                list.map((item) =>
+                    setProductStats((prev) => [
+                        ...prev,
+                        { name: months[item._id - 1], Sales: item.total }
+                    ]))
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    }, [productId, months])
+
     return (
         <div className='product-container'>
             <div className='product-title-container'>
@@ -17,31 +49,27 @@ const Product = () => {
 
             <div className='product-top-container'>
                 <div className='product-top-left'>
-                    <Chart data={productDummyData} title={"Sales Performance"} dataKey={"Sales"} />
+                    <Chart data={productStats} title={"Sales Performance"} dataKey={"Sales"} />
                 </div>
 
                 <div className='product-top-right'>
                     <div className='product-top-info'>
-                        <img className='product-top-image' src="https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png" alt="productImage" />
-                        <p className='product-top-name'>Razer Deathadder</p>
+                        <img className='product-top-image' src={product.img} alt="productImage" />
+                        <p className='product-top-name'>{product.title}</p>
                     </div>
 
                     <div className='product-bot-info'>
                         <div className='product-info-item'>
-                            <p className='product-info-key'>Id: 1</p>
-                            <p className='product-info-value'>$150.00</p>
+                            <p className='product-info-key'>Id: {product._id}</p>
+                            <p className='product-info-value'>${product.price}</p>
                         </div>
                         <div className='product-info-item'>
                             <p className='product-info-key'>Sales:</p>
                             <p className='product-info-value'>$3000.00</p>
                         </div>
                         <div className='product-info-item'>
-                            <p className='product-info-key'>Active:</p>
-                            <p className='product-info-value'>Yes</p>
-                        </div>
-                        <div className='product-info-item'>
                             <p className='product-info-key'>In stock:</p>
-                            <p className='product-info-value'>No</p>
+                            <p className='product-info-value'>{product.inStock ? 'Yes' : 'No'}</p>
                         </div>
                     </div>
                 </div>
@@ -52,16 +80,16 @@ const Product = () => {
                 <form className='product-bot-form'>
                     <div className='product-form-left'>
                         <label className='product-form-title'>Product Name</label>
-                        <input className='product-form-input' type="text" placeholder='Product Name' />
+                        <input className='product-form-input' type="text" placeholder={product.title} />
+
+                        <label className='product-form-title'>Product Description</label>
+                        <input className='product-form-input' type="text" placeholder={product.description} />
+
+                        <label className='product-form-title'>Product Price</label>
+                        <input className='product-form-input' type="text" placeholder={product.price} />
 
                         <label className='product-form-title'>In Stock</label>
                         <select className='product-form-input' name="instock" id="idStock">
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-
-                        <label className='product-form-title'>Active</label>
-                        <select className='product-form-input' name="active" id="idActive">
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                         </select>
@@ -69,7 +97,7 @@ const Product = () => {
 
                     <div className='product-form-right'>
                         <div className='product-upload'>
-                            <img className='product-bot-image' src="https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/r/a/razer_deathadder_v2_usb_maus-83519_01_3000px.png" alt="productImage" />
+                            <img className='product-bot-image' src={product.img} />
                             <label for="file"></label>
                             <input type="file" id='file' />
                         </div>
