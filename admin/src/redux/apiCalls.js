@@ -60,7 +60,7 @@ export const createProduct = async (dispatch, product) => {
     dispatch(createProductStart());
 
     try {
-        const res = await userRequest.post(`/products`, { product });
+        const res = await userRequest.post(`/products`, product);
         dispatch(createProductSuccess(res.data));
 
     } catch (error) {
