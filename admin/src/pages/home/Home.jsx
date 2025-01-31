@@ -9,37 +9,39 @@ import { userRequest } from '../../constants/requestMethods'
 
 const Home = () => {
     //TODO its not working properly
-    // const [userStats, setUserStats] = useState([]);
+    const [userStats, setUserStats] = useState([]);
 
-    // const months = useMemo(
-    //     () => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    // );
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    // useEffect(() => {
-    //     (async () => {
-    //         try {
-    //             const res = await userRequest.get('/users/stats');
-    //             res.data.map((item) =>
-    //                 setUserStats((prev) => [
-    //                     ...prev,
-    //                     { name: months[item._id - 1], "Active User": item.total }
-    //                 ]))
-    //         } catch (err) {
-    //             console.log(err);
-    //         }
-    //     })();
-    // }, [])
+    useEffect(() => {
+        (async () => {
+            try {
+                const res = await userRequest.get('/users/stats');
+                const stats = res.data.map((item) => ({
+                    name: months[item._id - 1],
+                    "Active User": item.total
+                }));
+                stats.sort((a, b) => months.indexOf(a.name) - months.indexOf(b.name));
+                setUserStats(stats);
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    }, []);
 
-    return (
-        <div className='home-container'>
-            <FeatureInfo />
-            <Chart data={dummyData} title={"User Analytics"} dataKey={"Active User"} grid />
-            <div className='home-widgets'>
-                <WidgetSmall />
-                <WidgetLarge />
+
+
+
+        return (
+            <div className='home-container'>
+                <FeatureInfo />
+                <Chart data={userStats} title={"User Analytics"} dataKey={"Active User"} grid />
+                <div className='home-widgets'>
+                    <WidgetSmall />
+                    <WidgetLarge />
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
 export default Home
