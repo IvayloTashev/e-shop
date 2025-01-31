@@ -22,11 +22,6 @@
     font-size: 30px;
 }
 
-.topbar-right-icon-container {
-    position: relative;
-    cursor: pointer;
-}
-
 .topbar-icon-badge {
     width: 15px;
     height: 15px;
@@ -57,4 +52,15 @@
 
 .topbar-avater-holder img {
     height: 100%;
+}
+
+.topbar-list {
+    display: flex;
+    gap: 30px;
+}
+
+.topbar-list-item {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 500;
 }
