@@ -5,7 +5,7 @@ import { productDummyData } from '../../dummyData'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { userRequest } from '../../constants/requestMethods'
-import { updaeteProduct } from '../../redux/apiCalls'
+import { updateProduct  } from '../../redux/apiCalls'
 
 
 const Product = () => {
@@ -17,28 +17,28 @@ const Product = () => {
 
     const product = useSelector((state) => state.product.products.find((product) => product._id === productId));
     //TODO FIX IT LATER
-    const months = useMemo(
-        () => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    );
+    // const months = useMemo(
+    //     () => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    // );
 
-    useEffect(() => {
-        (async () => {
-            try {
-                const res = await userRequest.get(`orders/income?pid=${productId}`);
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+    //             const res = await userRequest.get(`orders/income?pid=${productId}`);
 
-                const list = res.data.sort((a, b) => {
-                    return a._id - b._id
-                });
-                list.map((item) =>
-                    setProductStats((prev) => [
-                        ...prev,
-                        { name: months[item._id - 1], Sales: item.total }
-                    ]))
-            } catch (err) {
-                console.log(err);
-            }
-        })();
-    }, [productId, months])
+    //             const list = res.data.sort((a, b) => {
+    //                 return a._id - b._id
+    //             });
+    //             list.map((item) =>
+    //                 setProductStats((prev) => [
+    //                     ...prev,
+    //                     { name: months[item._id - 1], Sales: item.total }
+    //                 ]))
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     })();
+    // }, [productId, months])
 
     const handleChange = (e) => {
         setInputs((prev) => ({
@@ -49,7 +49,7 @@ const Product = () => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        updaeteProduct(dispatch, inputs, productId)
+        updateProduct (dispatch, inputs, productId)
     }
 
     return (
