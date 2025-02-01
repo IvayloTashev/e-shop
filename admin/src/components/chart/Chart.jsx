@@ -8,7 +8,7 @@ const Chart = ({ title, data, dataKey, grid }) => {
         <div className='chart-container'>
             <div className='chart'>
                 <h2 className='chart-title'>{title}</h2>
-                <ResponsiveContainer width="100%" aspect={4 / 1}>
+                <ResponsiveContainer width="100%" aspect={8 / 1}>
                     <LineChart data={data}>
                         <XAxis dataKey={"name"} stroke='#5a5ad1' />
                         <Line type="monotone" dataKey={dataKey} stroke='#5a5ad1' />

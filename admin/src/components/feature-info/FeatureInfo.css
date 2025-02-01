@@ -2,6 +2,9 @@
     display: flex;
     padding: 20px 50px;
     gap: 50px;
+    flex: 0 0 100%;
+    max-width: 500px;
+    margin: auto;
 }
 
 .feature-info-item {

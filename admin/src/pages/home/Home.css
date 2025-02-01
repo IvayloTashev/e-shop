@@ -1,9 +1,15 @@
 .home-container {
-    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .home-widgets {
     display: flex;
     padding: 20px 50px;
     gap: 30px;
+    flex: 0 0 100%;
+}
+
+.chart {
+    
 }
