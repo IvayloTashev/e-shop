@@ -102,6 +102,9 @@ const Product = () => {
                         <label className='product-form-title'>Product Price</label>
                         <input name='price' className='product-form-input' type="text" placeholder={product.price} onChange={handleChange} />
 
+                        <label className='product-form-title'>Color</label>
+                        <input name='color' className='product-form-input' type="text" placeholder={product.color} onChange={handleChange} />
+
                         <label className='product-form-title'>In Stock</label>
                         <select className='product-form-input' name="instock" id="idStock" onChange={handleChange}>
                             <option value="yes">Yes</option>

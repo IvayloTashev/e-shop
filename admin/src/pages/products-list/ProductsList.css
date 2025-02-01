@@ -1,9 +1,5 @@
 .products-list-container {
-    flex: 4;
-}
-
-.product-list-container {
-    flex: 4;
+   margin: auto;
 }
 
 .product-list-info {

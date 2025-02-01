@@ -2,9 +2,11 @@ import './CreateProduct.css'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createProduct } from '../../redux/apiCalls'
+import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
     const [categories, setCategories] = useState([]);
     const [color, setColors] = useState([]);
@@ -29,6 +31,8 @@ const CreateProduct = () => {
         e.preventDefault();
         const product = { ...inputs, categories, color };
         createProduct(dispatch, product)
+        navigate('/products')
+        
     };
 
     return (
@@ -36,23 +40,18 @@ const CreateProduct = () => {
             <h1 className='create-product-title'>Create New Product</h1>
             <form className='create-product-form'>
                 <div className='create-form-item'>
-                    <label className='create-form-label'>Image URL</label>
-                    <input name='img' className='create-form-input' type="text" onChange={handleChange} />
-                </div>
-
-                <div className='create-form-item'>
                     <label className='create-form-label'>Title</label>
                     <input name='title' className='create-form-input' type="text" onChange={handleChange} />
                 </div>
 
                 <div className='create-form-item'>
-                    <label className='create-form-label'>Brand</label>
-                    <input name='brand' className='create-form-input' type="text" onChange={handleChange} />
+                    <label className='create-form-label'>Description</label>
+                    <input name='description' className='create-form-input' type="text" onChange={handleChange} />
                 </div>
 
                 <div className='create-form-item'>
-                    <label className='create-form-label'>Price</label>
-                    <input name='price' className='create-form-input' type="number" onChange={handleChange} />
+                    <label className='create-form-label'>Image URL</label>
+                    <input name='img' className='create-form-input' type="text" onChange={handleChange} />
                 </div>
 
                 <div className='create-form-item'>
@@ -61,13 +60,18 @@ const CreateProduct = () => {
                 </div>
 
                 <div className='create-form-item'>
-                    <label className='create-form-label'>Color</label>
-                    <input className='create-form-input' type="text" onChange={handleColors} />
+                    <label className='create-form-label'>Price</label>
+                    <input name='price' className='create-form-input' type="number" onChange={handleChange} />
                 </div>
 
                 <div className='create-form-item'>
-                    <label className='create-form-label'>Description</label>
-                    <input name='description' className='create-form-input' type="text" onChange={handleChange} />
+                    <label className='create-form-label'>Brand</label>
+                    <input name='brand' className='create-form-input' type="text" onChange={handleChange} />
+                </div>
+
+                <div className='create-form-item'>
+                    <label className='create-form-label'>Color</label>
+                    <input className='create-form-input' type="text" onChange={handleColors} />
                 </div>
 
                 <div className='create-form-item'>

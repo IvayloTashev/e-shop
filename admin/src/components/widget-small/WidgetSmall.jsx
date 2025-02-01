@@ -2,6 +2,7 @@ import './WidgetSmall.css'
 import React, { useEffect, useState } from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { userRequest } from '../../constants/requestMethods';
+import { Link } from 'react-router-dom';
 
 const WidgetSmall = () => {
     const [users, setUsers] = useState([]);
@@ -24,13 +25,14 @@ const WidgetSmall = () => {
                             <p className='widget-small-name'>{user.username}</p>
                             <p className='widget-small-job-title'>{user.email}</p>
                         </div>
-                        <button className='widget-small-btn'>
-                            <VisibilityIcon />
-                            Display
-                        </button>
+                        <Link to={`/user/${user._id}`}>
+                            <button className='widget-small-btn'>
+                                <VisibilityIcon />
+                                Display
+                            </button>
+                        </Link>
                     </li>
-                ))};
-
+                ))}
             </ul>
 
         </div>

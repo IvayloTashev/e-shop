@@ -21,9 +21,9 @@ const ProductsList = () => {
     };
 
     const columns = [
-        { field: '_id', headerName: 'ID', width: 250 },
+        { field: '_id', headerName: 'ID', width: 230 },
         {
-            field: 'product', headerName: 'Product', width: 300, renderCell: (params) => {
+            field: 'product', headerName: 'Product', width: 450, renderCell: (params) => {
                 return (
                     <div className='product-list-info'>
                         <img src={params.row.img} alt="productImage" />
@@ -32,10 +32,10 @@ const ProductsList = () => {
                 )
             }
         },
-        { field: 'inStock', headerName: 'Stock', width: 200 },
-        { field: 'price', headerName: 'Price', width: 200, },
+        { field: 'description', headerName: 'Description', width: 800 },
+        { field: 'price', headerName: 'Price', width: 100, },
         {
-            field: 'action', headerName: 'Action', width: 180, renderCell: (params) => {
+            field: 'action', headerName: 'Action', width: 200, renderCell: (params) => {
                 return (
                     <>
                         <Link to={'/product/' + params.row._id}>
