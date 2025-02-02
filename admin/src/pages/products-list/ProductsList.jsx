@@ -26,8 +26,12 @@ const ProductsList = () => {
             field: 'product', headerName: 'Product', width: 450, renderCell: (params) => {
                 return (
                     <div className='product-list-info'>
-                        <img src={params.row.img} alt="productImage" />
-                        {params.row.title}
+                        <div className='product-list-info-img'>
+                            <img src={params.row.img} alt="productImage" />
+                        </div>
+                        <div className='product-list-info-title'>
+                            {params.row.title}
+                        </div>
                     </div>
                 )
             }
@@ -55,7 +59,7 @@ const ProductsList = () => {
             <div className='products-list-top'>
                 <h1>Product list</h1>
                 <Link to={'/createProduct'}>
-                <button className='products-list-create-btn'>Create product</button>
+                    <button className='products-list-create-btn'>Create product</button>
                 </Link>
             </div>
             <DataGrid
@@ -66,6 +70,7 @@ const ProductsList = () => {
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
+                rowHeight={60}
                 sx={{ border: 0 }}
             />
         </div>

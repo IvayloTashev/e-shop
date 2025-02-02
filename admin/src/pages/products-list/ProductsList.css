@@ -4,15 +4,27 @@
 
 .product-list-info {
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-list-info-img {
+    display: flex;
+    border: 1px solid lightgrey;
+    overflow: hidden;
+    border-radius: 50%;
     gap: 10px;
     align-items: center;
+    justify-content: center;
     font-weight: 600;
+    width: 55px;
+    height: 55px;
 }
 
 .product-list-info img {
-    width: 40px;
-    height: 40px;
     object-fit: cover;
+    max-height: 50px;
+    max-width: 50px;
 }
 
 .product-list-btns {
