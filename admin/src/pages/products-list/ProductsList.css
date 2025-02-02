@@ -52,3 +52,24 @@
 .product-list-delete:hover {
     background-color: rgb(216, 0, 0);
 }
+
+.products-list-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.products-list-create-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
+}
+
+.products-list-create-btn:hover {
+    background-color: rgb(0, 187, 187);
+}

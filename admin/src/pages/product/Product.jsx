@@ -1,44 +1,16 @@
 import './Product.css'
-import React, { useEffect, useMemo, useState } from 'react'
-import Chart from '../../components/chart/Chart'
-import { productDummyData } from '../../dummyData'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { userRequest } from '../../constants/requestMethods'
-import { updateProduct  } from '../../redux/apiCalls'
-
+import { updateProduct } from '../../redux/apiCalls'
 
 const Product = () => {
     const location = useLocation();
     const dispatch = useDispatch();
     const productId = location.pathname.split('/')[2];
-    const [productStats, setProductStats] = useState([]);
     const [inputs, setInputs] = useState({});
 
     const product = useSelector((state) => state.product.products.find((product) => product._id === productId));
-    //TODO FIX IT LATER
-    // const months = useMemo(
-    //     () => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    // );
-
-    // useEffect(() => {
-    //     (async () => {
-    //         try {
-    //             const res = await userRequest.get(`orders/income?pid=${productId}`);
-
-    //             const list = res.data.sort((a, b) => {
-    //                 return a._id - b._id
-    //             });
-    //             list.map((item) =>
-    //                 setProductStats((prev) => [
-    //                     ...prev,
-    //                     { name: months[item._id - 1], Sales: item.total }
-    //                 ]))
-    //         } catch (err) {
-    //             console.log(err);
-    //         }
-    //     })();
-    // }, [productId, months])
 
     const handleChange = (e) => {
         setInputs((prev) => ({
@@ -49,23 +21,16 @@ const Product = () => {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        updateProduct (dispatch, inputs, productId)
+        updateProduct(dispatch, inputs, productId)
     }
 
     return (
         <div className='product-container'>
             <div className='product-title-container'>
                 <h2 className='product-title'>Product</h2>
-                <Link to={'/createProduct'}>
-                    <button className='product-create-btn'>Create</button>
-                </Link>
             </div>
 
             <div className='product-top-container'>
-                <div className='product-top-left'>
-                    <Chart data={productStats} title={"Sales Performance"} dataKey={"Sales"} />
-                </div>
-
                 <div className='product-top-right'>
                     <div className='product-top-info'>
                         <img className='product-top-image' src={product.img} alt="productImage" />

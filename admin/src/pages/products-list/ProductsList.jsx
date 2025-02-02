@@ -1,5 +1,5 @@
 import './ProductsList.css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -52,6 +52,12 @@ const ProductsList = () => {
 
     return (
         <div className='products-list-container'>
+            <div className='products-list-top'>
+                <h1>Product list</h1>
+                <Link to={'/createProduct'}>
+                <button className='products-list-create-btn'>Create product</button>
+                </Link>
+            </div>
             <DataGrid
                 rows={products}
                 disableRowSelectionOnClick
