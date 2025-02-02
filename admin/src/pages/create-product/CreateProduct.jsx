@@ -9,7 +9,7 @@ const CreateProduct = () => {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
     const [categories, setCategories] = useState([]);
-    const [color, setColors] = useState([]);
+    const [colors, setColors] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -29,7 +29,7 @@ const CreateProduct = () => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        const product = { ...inputs, categories, color };
+        const product = { ...inputs, categories, colors };
         createProduct(dispatch, product)
         navigate('/products')
         
