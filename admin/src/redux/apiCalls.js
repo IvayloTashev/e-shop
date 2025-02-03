@@ -1,13 +1,17 @@
-import { loginStart, loginSuccess, loginFailure } from "./userRedux";
+import {
+    loginStart, loginSuccess, loginFailure,
+    getUserStart, getUserSuccess, getUserFailure,
+} from "./userRedux";
 import {
     getProductStart, getProductSuccess, getProductFailure,
     deleteProductStart, deleteProductSuccess, deleteProductFailure,
     updateProductStart, updateProductSuccess, updateProductFailure,
-    createProductStart, createProductSuccess, createProductFailure
+    createProductStart, createProductSuccess, createProductFailure,
 } from "./productRedux";
 
 import { publicRequest, userRequest } from "../constants/requestMethods";
 
+//USERS
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
 
@@ -20,6 +24,19 @@ export const login = async (dispatch, user) => {
     }
 };
 
+export const getUsers = async (dispatch) => {
+    dispatch(getUserStart());
+
+    try {
+        const res = await userRequest.get('/users');
+        dispatch(getUserSuccess(res.data));
+    } catch (error) {
+        dispatch(getUserFailure())
+    }
+};
+
+
+//PRODUCTS
 export const getProducts = async (dispatch) => {
     dispatch(getProductStart());
 
