@@ -1,5 +1,5 @@
 .user-list-container {
-    flex: 4;
+
 }
 
 .user-list-info {
@@ -52,4 +52,21 @@
 
 .user-list-delete:hover {
     background-color: rgb(216, 0, 0);
+}
+
+.user-list-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.user-list-create-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    font-weight: 500;
 }

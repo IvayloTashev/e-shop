@@ -1,10 +1,24 @@
 import './UserList.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUsers } from '../../redux/apiCalls';
 import { DataGrid } from '@mui/x-data-grid';
 import { userRows } from '../../dummyData'
 import { Link } from 'react-router-dom'
 
 const UserList = () => {
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.user.users)
+
+    useEffect(() => {
+        (async () => {
+            getUsers(dispatch);
+        })();
+    }, [dispatch])
+
+    console.log(products);
+    
+
     const [data, setData] = useState(userRows);
 
     const handleDelete = (id) => {
@@ -30,7 +44,7 @@ const UserList = () => {
             field: 'action', headerName: 'Action', width: 180, renderCell: (params) => {
                 return (
                     <>
-                        <Link to={'/user/' + params.row.id}>
+                        <Link to={'/user/' + params.row._id}>
                             <button className='user-list-edit'>Edit</button>
                         </Link>
                         <button className='user-list-delete' onClick={() => handleDelete(params.row.id)}>Delete</button>
@@ -44,10 +58,17 @@ const UserList = () => {
 
     return (
         <div className='user-list-container'>
+            <div className='user-list-top'>
+                <h1>User list</h1>
+                <Link to={'/createUser'}>
+                    <button className='user-list-create-btn'>Create user</button>
+                </Link>
+            </div>
             <DataGrid
-                rows={data}
+                rows={products}
                 disableRowSelectionOnClick
                 columns={columns}
+                getRowId={(row) => row._id}
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
