@@ -30,7 +30,7 @@ const ProductsList = () => {
                             <img src={params.row.img} alt="productImage" />
                         </div>
                         <div className='product-list-info-title'>
-                            {params.row.title}
+                            <p>{params.row.title}</p>
                         </div>
                     </div>
                 )
@@ -70,7 +70,7 @@ const ProductsList = () => {
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
-                rowHeight={60}
+                rowHeight={65}
                 sx={{ border: 0 }}
             />
         </div>

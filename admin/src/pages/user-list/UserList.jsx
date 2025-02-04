@@ -17,7 +17,7 @@ const UserList = () => {
     }, [dispatch])
 
     console.log(products);
-    
+
 
     const [data, setData] = useState(userRows);
 
@@ -26,22 +26,25 @@ const UserList = () => {
     }
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
+        { field: '_id', headerName: 'ID', width: 300 },
         {
-            field: 'user', headerName: 'User', width: 200, renderCell: (params) => {
+            field: 'user', headerName: 'User', width: 450, renderCell: (params) => {
                 return (
                     <div className='user-list-info'>
-                        <img src={params.row.avatar} alt="avatar" />
-                        {params.row.username}
+                        <div className='user-list-info-img'>
+                            <img src={params.row.image} alt="avatar" />
+                        </div>
+                        <div className='user-list-info-title'>
+                            <p>{params.row.username}</p>
+                        </div>
                     </div>
                 )
             }
         },
-        { field: 'email', headerName: 'Email', width: 200 },
-        { field: 'status', headerName: 'Status', width: 130, },
-        { field: 'transaction', headerName: 'Transaction volume', width: 200, },
+        { field: 'email', headerName: 'Email', width: 450 },
+        { field: 'isAdmin', headerName: 'Admin', width: 250, },
         {
-            field: 'action', headerName: 'Action', width: 180, renderCell: (params) => {
+            field: 'action', headerName: 'Action', width: 300, renderCell: (params) => {
                 return (
                     <>
                         <Link to={'/user/' + params.row._id}>
@@ -72,6 +75,7 @@ const UserList = () => {
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
+                rowHeight={65}
                 sx={{ border: 0 }}
             />
         </div>
