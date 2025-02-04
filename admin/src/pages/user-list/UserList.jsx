@@ -8,16 +8,13 @@ import { Link } from 'react-router-dom'
 
 const UserList = () => {
     const dispatch = useDispatch();
-    const products = useSelector((state) => state.user.users)
+    const users = useSelector((state) => state.user.users)
 
     useEffect(() => {
         (async () => {
             getUsers(dispatch);
         })();
     }, [dispatch])
-
-    console.log(products);
-
 
     const [data, setData] = useState(userRows);
 
@@ -42,7 +39,7 @@ const UserList = () => {
             }
         },
         { field: 'email', headerName: 'Email', width: 450 },
-        { field: 'isAdmin', headerName: 'Admin', width: 250, },
+        { field: 'isAdmin', headerName: 'Admin access', width: 250, },
         {
             field: 'action', headerName: 'Action', width: 300, renderCell: (params) => {
                 return (
@@ -68,7 +65,7 @@ const UserList = () => {
                 </Link>
             </div>
             <DataGrid
-                rows={products}
+                rows={users}
                 disableRowSelectionOnClick
                 columns={columns}
                 getRowId={(row) => row._id}
