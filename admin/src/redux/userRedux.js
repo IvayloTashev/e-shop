@@ -38,12 +38,32 @@ const userSlice = createSlice({
         getUserFailure: (state) => {
             state.isFetching = false;
             state.error = true
-        }
+        },
+
+        //UPDATE
+        updateUserStart: (state) => {
+            state.isFetching = true;
+            state.error = false
+        },
+
+        updateUserSuccess: (state, action) => {
+            state.isFetching = false;
+            const index = state.users.findIndex((item) => item._id === action.payload._id)
+            if (index !== -1) {
+                state.users[index] = action.payload
+            }
+        },
+
+        updateUserFailure: (state) => {
+            state.isFetching = false;
+            state.error = true
+        },
     }
 });
 
 export const {
     loginStart, loginSuccess, loginFailure,
-    getUserStart, getUserSuccess, getUserFailure
+    getUserStart, getUserSuccess, getUserFailure,
+    updateUserStart, updateUserSuccess, updateUserFailure
 } = userSlice.actions;
 export default userSlice.reducer;
