@@ -4,6 +4,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import EmailIcon from '@mui/icons-material/Email';
 import NumbersIcon from '@mui/icons-material/Numbers';
+import { updateUser } from '../../redux/apiCalls'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,9 +14,19 @@ const User = () => {
     const userId = location.pathname.split('/')[2];
     const [inputs, setInputs] = useState({});
 
-
     const user = useSelector(state => state.user.users.find(user => user._id === userId));
 
+    const handleChanges = (e) => {
+        setInputs((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const handleUpdate = (e) => {
+        e.preventDefault();
+        updateUser(dispatch, inputs, userId);
+    }
 
 
 
@@ -48,12 +59,12 @@ const User = () => {
                     <h2 className='user-update-title'>Edit</h2>
                     <form className='user-update-form'>
                         <label htmlFor="" className='user-update-label'>Image URL</label>
-                        <input name='image' type="text" placeholder='Image URL' className='user-update-input' />
+                        <input name='image' type="text" placeholder='Image URL' className='user-update-input' onChange={handleChanges} />
                         <label htmlFor="" className='user-update-label'>Username</label>
-                        <input name='username' type="text" placeholder={user.username} className='user-update-input' />
+                        <input name='username' type="text" placeholder={user.username} className='user-update-input' onChange={handleChanges} />
                         <label htmlFor="" className='user-update-label'>Email</label>
-                        <input name='email' type="text" placeholder={user.email} className='user-update-input' />
-                        <button className='user-update-btn'>Update</button>
+                        <input name='email' type="text" placeholder={user.email} className='user-update-input' onChange={handleChanges} />
+                        <button className='user-update-btn' onClick={handleUpdate}>Update</button>
                     </form>
                 </div>
             </div>
