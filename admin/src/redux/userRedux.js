@@ -24,6 +24,11 @@ const userSlice = createSlice({
             state.error = true;
         },
 
+        //LOGOUT
+        logout: (state) => {
+            state.currentUser = null;
+        },
+
         //GET ALL
         getUserStart: (state) => {
             state.isFetching = true;
@@ -58,12 +63,31 @@ const userSlice = createSlice({
             state.isFetching = false;
             state.error = true
         },
+
+        //DELETE
+        deleteUserStart: (state) => {
+            state.isFetching = true;
+            state.error = false
+        },
+
+        deleteUserSuccess: (state, action) => {
+            state.isFetching = false;
+            state.users.splice(state.users.findIndex((item) => item._id === action.payload), 1)
+        },
+
+        deleteUserFailure: (state) => {
+            state.isFetching = false;
+            state.error = true
+        },
     }
 });
 
 export const {
+    logout,
     loginStart, loginSuccess, loginFailure,
     getUserStart, getUserSuccess, getUserFailure,
-    updateUserStart, updateUserSuccess, updateUserFailure
+    updateUserStart, updateUserSuccess, updateUserFailure,
+    deleteUserStart,deleteUserSuccess,deleteUserFailure
+
 } = userSlice.actions;
 export default userSlice.reducer;
