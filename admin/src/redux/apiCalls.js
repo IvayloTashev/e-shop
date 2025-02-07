@@ -1,7 +1,9 @@
 import {
+    logout,
     loginStart, loginSuccess, loginFailure,
     getUserStart, getUserSuccess, getUserFailure,
-    updateUserStart, updateUserSuccess, updateUserFailure
+    updateUserStart, updateUserSuccess, updateUserFailure,
+    deleteUserStart, deleteUserSuccess, deleteUserFailure
 } from "./userRedux";
 import {
     getProductStart, getProductSuccess, getProductFailure,
@@ -22,6 +24,22 @@ export const login = async (dispatch, user) => {
 
     } catch (error) {
         dispatch(loginFailure());
+    }
+};
+
+export const logoutUser = async (dispatch) => {
+    dispatch(logout());
+};
+
+export const deleteUser = async (dispatch, id) => {
+    dispatch(deleteUserStart());
+
+    try {
+        const res = await userRequest.delete(`/users/${id}`);
+        dispatch(deleteUserSuccess(id));
+
+    } catch (error) {
+        dispatch(deleteUserFailure());
     }
 };
 
@@ -46,7 +64,9 @@ export const updateUser = async (dispatch, user, id) => {
     } catch (error) {
         dispatch(updateUserFailure())
     }
-}
+};
+
+
 
 
 //PRODUCTS

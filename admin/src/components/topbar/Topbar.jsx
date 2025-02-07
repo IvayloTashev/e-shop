@@ -1,13 +1,20 @@
 import './Topbar.css'
 import React from 'react'
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import LanguageIcon from '@mui/icons-material/Language';
-import SettingsIcon from '@mui/icons-material/Settings';
-import { Link } from 'react-router-dom';
-
-
+import { Link, useNavigate} from 'react-router-dom';
+import { logoutUser } from '../../redux/apiCalls'
+import { useDispatch } from 'react-redux';
 
 const Topbar = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+    //TODO fix navigation to login after logout
+    const handleLogout = (e) => {
+        e.preventDefault();
+        logoutUser(dispatch);
+        navigate('/login')
+    }
+
     return (
         <div className='topbar-container'>
             <div className='topbar-wrapper'>
@@ -27,9 +34,7 @@ const Topbar = () => {
                 </div>
 
                 <div className='topbar-right'>
-                    <div className='topbar-avater-holder'>
-                        <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="avatar" />
-                    </div>
+                    <p className='topbar-right-logout' onClick={handleLogout}>Logout</p>
                 </div>
 
             </div>
