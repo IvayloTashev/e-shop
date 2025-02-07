@@ -1,7 +1,7 @@
 import './UserList.css'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUsers } from '../../redux/apiCalls';
+import { getUsers, deleteUser } from '../../redux/apiCalls';
 import { DataGrid } from '@mui/x-data-grid';
 import { userRows } from '../../dummyData'
 import { Link } from 'react-router-dom'
@@ -16,10 +16,8 @@ const UserList = () => {
         })();
     }, [dispatch])
 
-    const [data, setData] = useState(userRows);
-
-    const handleDelete = (id) => {
-        setData(data.filter(item => item.id !== id));
+    const handleDelete = (userId) => {
+        deleteUser(dispatch, userId)
     }
 
     const columns = [
@@ -47,7 +45,7 @@ const UserList = () => {
                         <Link to={'/user/' + params.row._id}>
                             <button className='user-list-edit'>Edit</button>
                         </Link>
-                        <button className='user-list-delete' onClick={() => handleDelete(params.row.id)}>Delete</button>
+                        <button className='user-list-delete' onClick={() => handleDelete(params.row._id)}>Delete</button>
                     </>
                 )
             }
