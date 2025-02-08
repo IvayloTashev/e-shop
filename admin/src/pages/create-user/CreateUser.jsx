@@ -1,57 +1,54 @@
 import './CreateUser.css'
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const CreateUser = () => {
+    const [inputs, setInputs] = useState({});
+    const [adminAccess, setAdminAccess] = useState({});
+
+
+    const handleChange = (e) => {
+        setInputs((prev) => ({
+            ...prev, [e.target.name]: e.target.value
+        }))
+    };
+
+    const handleAdmin = (e) => {
+        if (e.target.value === 'yes') {
+            setAdminAccess({ [e.target.name]: true });
+        } else {
+            setAdminAccess({ [e.target.name]: false });
+        }
+    }
+
+
+
+
+
     return (
         <div className='create-user-container'>
             <h2 className='create-user-title'>Create New User</h2>
             <form className='create-user-form'>
                 <div className='create-user-form-item'>
                     <label className='create-user-form-label'>Username</label>
-                    <input type="text" className='create-user-form-input' placeholder='Username' />
-                </div>
-
-                <div className='create-user-form-item'>
-                    <label className='create-user-form-label'>Full Name</label>
-                    <input type="text" className='create-user-form-input' placeholder='Full Name' />
+                    <input name='username' type="text" className='create-user-form-input' placeholder='Username' onChange={handleChange} />
                 </div>
 
                 <div className='create-user-form-item'>
                     <label className='create-user-form-label'>Email</label>
-                    <input type="text" className='create-user-form-input' placeholder='Email' />
+                    <input name='email' type="text" className='create-user-form-input' placeholder='Email' onChange={handleChange} />
                 </div>
 
                 <div className='create-user-form-item'>
                     <label className='create-user-form-label'>Passworld</label>
-                    <input type="password" className='create-user-form-input' placeholder='Passworld' />
+                    <input name='password' type="password" className='create-user-form-input' placeholder='Passworld' onChange={handleChange} />
                 </div>
 
                 <div className='create-user-form-item'>
-                    <label className='create-user-form-label'>Phone</label>
-                    <input type="text" className='create-user-form-input' placeholder='Phone' />
-                </div>
-
-                <div className='create-user-form-item'>
-                    <label className='create-user-form-label'>Address</label>
-                    <input type="text" className='create-user-form-input' placeholder='Address' />
-                </div>
-
-                <div className='create-user-form-item'>
-                    <label className='create-user-form-label'>Gender</label>
-                    <div className='create-user-form-gender'>
-                        <input type="radio" className='create-user-form-radio' name='gender' id='male' value='male' />
-                        <label for="male">Male</label>
-                        <input type="radio" className='create-user-form-radio' name='gender' id='female' value='female' />
-                        <label for="female">Female</label>
-                    </div>
-                </div>
-
-                <div className='create-user-form-item'>
-                    <label className='create-user-form-label'>Active</label>
-                    <select name="active" id="active" className='create-user-form-input'>
-                        <option value="yes">Yes</option>
+                    <label className='create-user-form-label'>Admin access</label>
+                    <select name="isAdmin" id="isAdmin" className='create-user-form-input' onChange={handleAdmin}>
                         <option value="no">No</option>
+                        <option value="yes">Yes</option>
                     </select>
                 </div>
 

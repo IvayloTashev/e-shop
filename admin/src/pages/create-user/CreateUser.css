@@ -1,6 +1,10 @@
 .create-user-container {
-    flex: 4;
     padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .create-user-title {
@@ -9,8 +13,10 @@
 
 .create-user-form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-user-form-item {
