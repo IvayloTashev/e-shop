@@ -1,9 +1,8 @@
 import './UserList.css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers, deleteUser } from '../../redux/apiCalls';
 import { DataGrid } from '@mui/x-data-grid';
-import { userRows } from '../../dummyData'
 import { Link } from 'react-router-dom'
 
 const UserList = () => {

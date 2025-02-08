@@ -3,7 +3,8 @@ import {
     loginStart, loginSuccess, loginFailure,
     getUserStart, getUserSuccess, getUserFailure,
     updateUserStart, updateUserSuccess, updateUserFailure,
-    deleteUserStart, deleteUserSuccess, deleteUserFailure
+    deleteUserStart, deleteUserSuccess, deleteUserFailure,
+    createUserStart, createUserSuccess, createUserFailure
 } from "./userRedux";
 import {
     getProductStart, getProductSuccess, getProductFailure,
@@ -66,7 +67,17 @@ export const updateUser = async (dispatch, user, id) => {
     }
 };
 
+export const createUser = async (dispatch, user) => {
+    dispatch(createUserStart());
 
+    try {
+        const res = await userRequest.post(`/auth/register`, user);
+        dispatch(createUserSuccess(res.data));
+
+    } catch (error) {
+        dispatch(createUserFailure());
+    }
+};
 
 
 //PRODUCTS

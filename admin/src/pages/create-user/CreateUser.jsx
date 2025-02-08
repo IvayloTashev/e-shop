@@ -1,8 +1,11 @@
 import './CreateUser.css'
 import React, { useState } from 'react'
+import { createUser } from '../../redux/apiCalls'
+import { useDispatch } from 'react-redux'
 
 
 const CreateUser = () => {
+    const dispatch = useDispatch();
     const [inputs, setInputs] = useState({});
     const [adminAccess, setAdminAccess] = useState({});
 
@@ -19,6 +22,12 @@ const CreateUser = () => {
         } else {
             setAdminAccess({ [e.target.name]: false });
         }
+    };
+
+    const handleCreate = (e) => {
+        e.preventDefault();
+        const user = {...inputs, ...adminAccess};
+        createUser(dispatch, user);
     }
 
 
@@ -52,7 +61,7 @@ const CreateUser = () => {
                     </select>
                 </div>
 
-                <button className='create-user-form-btn'>Create</button>
+                <button className='create-user-form-btn' onClick={handleCreate}>Create</button>
             </form>
         </div>
     )
