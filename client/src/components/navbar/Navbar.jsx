@@ -18,7 +18,7 @@ const Navbar = () => {
                     <span className='language'>EN</span>
                     <div className='search-container'>
                         <input type="text" />
-                        <Search style={{ color: "grey", fontSize: 20 }} />
+                        <Search style={{ color: "white", fontSize: 24, cursor: 'pointer'}} />
                     </div>
                 </div>
 
@@ -30,11 +30,12 @@ const Navbar = () => {
 
                 <div className='navbar-right'>
                     <div className='navbar-register-container'>
-                        Register
+                        <Link to={'/register'}>Register</Link>
+                        
                     </div>
 
                     <div className='navbar-login-container'>
-                        Sing in
+                    <Link to={'/login'}>Sing in</Link>
                     </div>
 
                     <div className='navbar-cart-container'>

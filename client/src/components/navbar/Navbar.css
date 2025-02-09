@@ -1,3 +1,8 @@
+.navbar-container {
+    background-color: black;
+    color: white;
+}
+
 .navbar-wrapper {
     padding: 10px 20px;
     display: flex;
@@ -10,7 +15,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 
@@ -20,23 +25,23 @@
 }
 
 .search-container {
-    border: 1px solid lightgray;
-    border-radius: 5px;
     display: flex;
     align-items: center;
-    padding: 5px;
 }
 
 .search-container input {
     border: none;
     outline: none;
     color: grey;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 5px;
 }
 
 .logo-container h1 {
     font-size: 30px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .navbar-cart-container {
@@ -48,4 +53,10 @@
 .navbar-login-container {
     font-size: 20px;
     font-weight: 500;
+}
+
+.navbar-register-container:hover,
+.navbar-login-container:hover,
+.navbar-cart-container:hover {
+    transform: scale(1.2);
 }
