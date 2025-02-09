@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import './Details.css'
 
 import Navbar from '../../components/navbar/Navbar'
-import Announcement from '../../components/announcement/Announcement'
-import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
 import { useLocation } from 'react-router-dom'
 import { getOneProduct } from '../../hooks/useProducts'
@@ -35,7 +33,6 @@ const Details = () => {
 
     return (
         <div className='details-container'>
-            <Announcement />
             <Navbar />
 
             <div className='details-wrapper'>
@@ -70,8 +67,6 @@ const Details = () => {
 
                 </div>
             </div>
-
-            <Newsletter />
             <Footer />
 
         </div>

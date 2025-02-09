@@ -1,7 +1,6 @@
 import React from 'react'
 import './Cart.css'
 import Navbar from '../../components/navbar/Navbar'
-import Announcement from '../../components/announcement/Announcement'
 import Footer from '../../components/footer/Footer'
 import { useSelector } from 'react-redux'
 
@@ -10,7 +9,6 @@ const Cart = () => {
 
     return (
         <div className='cart-container'>
-            <Announcement />
             <Navbar />
             <div className='cart-wrapper'>
 

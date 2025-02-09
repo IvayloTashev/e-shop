@@ -2,9 +2,7 @@ import './Catalog.css'
 import React, { useState } from 'react'
 
 import Navbar from '../../components/navbar/Navbar'
-import Announcement from '../../components/announcement/Announcement'
 import Products from '../../components/products/Products'
-import Newsletter from '../../components/newsletter/Newsletter'
 import Footer from '../../components/footer/Footer'
 import { useLocation } from 'react-router-dom';
 
@@ -26,7 +24,6 @@ const Catalog = () => {
 
     return (
         <div className='catalog-container'>
-            <Announcement />
             <Navbar />
 
             <h1>Category: {category}</h1>
@@ -58,7 +55,6 @@ const Catalog = () => {
             </div>
 
             <Products category={category} filters={filters} sort={sort} />
-            <Newsletter />
             <Footer />
         </div>
     )

@@ -24,7 +24,7 @@ const Navbar = () => {
 
                 <div className='navbar-center'>
                     <div className='logo-container'>
-                        <h1>GGWP</h1>
+                        <Link to={'/'}><h1>GGWP</h1></Link>
                     </div>
                 </div>
 
