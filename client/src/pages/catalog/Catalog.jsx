@@ -23,40 +23,44 @@ const Catalog = () => {
     };
 
     return (
-        <div className='catalog-container'>
+        <>
             <Navbar />
+            <div className='catalog-container'>
 
-            <h1>Category: {category}</h1>
 
-            <div className='catalog-filter-container'>
-                <div className='filter-holder'>
-                    <p>Filter Products:</p>
-                    <select name='brand' onChange={handleFilters}>
-                        <option value="">Brand:</option>
-                        <option value="Logitech">Logitech</option>
-                        <option value="Razer">Razer</option>
-                        <option value="SteelSeries">Steelseries</option>
-                    </select>
-                    <select name='color' onChange={handleFilters}>
-                        <option value="">Color:</option>
-                        <option value="Black">Black</option>
-                        <option value="White">White</option>
-                        <option value="Blue">Blue</option>
-                    </select>
+                <h1>Category: {category}</h1>
+
+                <div className='catalog-filter-container'>
+                    <div className='filter-holder'>
+                        <p>Filter Products:</p>
+                        <select name='brand' onChange={handleFilters}>
+                            <option value="">Brand:</option>
+                            <option value="Logitech">Logitech</option>
+                            <option value="Razer">Razer</option>
+                            <option value="SteelSeries">Steelseries</option>
+                        </select>
+                        <select name='color' onChange={handleFilters}>
+                            <option value="">Color:</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </div>
+                    <div className='filter-holder'>
+                        <p>Sort Products:</p>
+                        <select onChange={(e) => setSort(e.target.value)}>
+                            <option value="newest">Newest:</option>
+                            <option value="lowToHigh">Price - low to high</option>
+                            <option value="highToLow">Price - high to low</option>
+                        </select>
+                    </div>
                 </div>
-                <div className='filter-holder'>
-                    <p>Sort Products:</p>
-                    <select onChange={(e) => setSort(e.target.value)}>
-                        <option value="newest">Newest:</option>
-                        <option value="lowToHigh">Price - low to high</option>
-                        <option value="highToLow">Price - high to low</option>
-                    </select>
-                </div>
+
+                <Products category={category} filters={filters} sort={sort} />
+                <Footer />
             </div>
+        </>
 
-            <Products category={category} filters={filters} sort={sort} />
-            <Footer />
-        </div>
     )
 }
 
