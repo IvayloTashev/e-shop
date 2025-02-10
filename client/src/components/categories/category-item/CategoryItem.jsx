@@ -14,11 +14,9 @@ const CategoryItem = ({ item }) => {
 
                 <div className='category-info-holder'>
                     <p>{item.title}</p>
-                    <button>BUY NOW</button>
                 </div>
             </Link>
         </div>
-
     )
 }
 

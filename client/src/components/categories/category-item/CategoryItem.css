@@ -9,13 +9,19 @@
 }
 
 .category-image-holder {
-    flex: 1;
+    height: 300px;
+    width: 430px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .category-image-holder img {
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease-in-out;
 }
 
 .category-info-holder {
@@ -35,4 +41,9 @@
 .category-info-holder p {
     font-size: 30px;
     font-weight: 500;
+}
+
+.category-image-holder img:hover {
+    transform: scale(1.1);
+
 }

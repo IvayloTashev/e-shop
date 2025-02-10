@@ -19,13 +19,14 @@ export const sliderItems = [
     image: 'https://media.steelseriescdn.com/thumbs/filer_public/bd/28/bd280393-ef10-4e52-a1fa-1a257ee67777/650wl_web_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2.jpg',
     title: 'Steelseries',
     description: 'Unleash the Gamer Within with Steelseries Gaming Gear',
-  }
+  },
+
 ];
 
 export const categories = [
   {
     id: 1,
-    image: "https://cdn.ozone.bg/media/catalog/product/cache/1/image/400x498/a4e40ebdc3e371adff845072e1c73f37/g/e/d994dcfc650c274cb0547a6cb58a5996/geyming-slushalki-hyperx---cloud-ii-wireless--bezzhichni--cherni-chervni-31.jpg",
+    image: "https://hnsgsfp.imgix.net/9/images/detailed/71/SteelSeries_Arctis_9_Wireless_Gaming_Headset.jpg?fit=fill&bg=0FFF&w=1536&h=900&auto=format,compress",
     title: "Headset",
     categories: "headset",
   },
@@ -41,7 +42,13 @@ export const categories = [
     image: "https://desktop.bg/system/images/249349/normal/910005272.jpg",
     title: "Mice",
     categories: "mouse",
+  },
 
+  {
+    id: 4,
+    image: "https://br.thermaltake.com/media/catalog/product/cache/6d056a87c91b88ea869075bcdd058dec/l/2/l20md01.jpg",
+    title: "Mousepad",
+    categories: "mousepad",
   },
 ];
 
