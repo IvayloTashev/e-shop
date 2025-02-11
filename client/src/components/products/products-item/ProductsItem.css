@@ -10,8 +10,11 @@
 }
 
 .producs-item-container:hover {
-    border: 2px solid rgb(151, 253, 219);
+    border: 2px solid #7f7bdd;
+}
 
+.producs-item-container:hover .producs-info-container {
+    background-color: #a6a2ff;
 }
 
 .product-image-holder {
@@ -31,7 +34,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(224, 224, 224);
+    background-color: #d3d3d3;
     margin: 0 10px 10px 10px;
     border-radius: 20px;
     padding: 5px;

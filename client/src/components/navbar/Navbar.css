@@ -1,6 +1,5 @@
 .navbar-container {
-    background-color: black;
-    color: white;
+    background-color: #9e9ccf;
 }
 
 .navbar-wrapper {
@@ -40,8 +39,8 @@
 
 .logo-container h1 {
     font-size: 30px;
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 .navbar-cart-container {
