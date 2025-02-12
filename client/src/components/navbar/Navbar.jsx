@@ -8,6 +8,7 @@ import { Link } from "react-router";
 
 const Navbar = () => {
     const quantity = useSelector(state => state.cart.quantity);
+    const user = useSelector((state) => state.user.currentUser);
 
     return (
         <div className='navbar-container'>
@@ -18,7 +19,7 @@ const Navbar = () => {
                     <span className='language'>EN</span>
                     <div className='search-container'>
                         <input type="text" />
-                        <Search style={{ color: "white", fontSize: 24, cursor: 'pointer'}} />
+                        <Search style={{ color: "white", fontSize: 24, cursor: 'pointer' }} />
                     </div>
                 </div>
 
@@ -29,22 +30,31 @@ const Navbar = () => {
                 </div>
 
                 <div className='navbar-right'>
-                    <div className='navbar-register-container'>
-                        <Link to={'/register'}>Register</Link>
-                        
-                    </div>
 
-                    <div className='navbar-login-container'>
-                    <Link to={'/login'}>Sing in</Link>
-                    </div>
+                    {user ? (
+                        <>
+                            <div className='navbar-logout-container'>
+                                <p>Logout</p>
+                            </div>
+                            <div className='navbar-cart-container'>
+                                <Link to={'/cart'}>
+                                    <Badge badgeContent={quantity} color="secondary">
+                                        <ShoppingCartIcon />
+                                    </Badge>
+                                </Link>
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <div className='navbar-register-container'>
+                                <Link to={'/register'}>Register</Link>
+                            </div>
 
-                    <div className='navbar-cart-container'>
-                        <Link to={'/cart'}>
-                            <Badge badgeContent={quantity} color="secondary">
-                                <ShoppingCartIcon />
-                            </Badge>
-                        </Link>
-                    </div>
+                            <div className='navbar-login-container'>
+                                <Link to={'/login'}>Sing in</Link>
+                            </div>
+                        </>
+                    )}
                 </div>
 
             </div>
