@@ -3,12 +3,19 @@ import './Navbar.css'
 import { Search } from '@mui/icons-material'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router";
+import { logout } from '../../redux/apiCalls';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
     const quantity = useSelector(state => state.cart.quantity);
     const user = useSelector((state) => state.user.currentUser);
+
+    const hanldeLogout = (e) => {
+        e.preventDefault();
+        logout(dispatch);
+    }   
 
     return (
         <div className='navbar-container'>
@@ -34,7 +41,7 @@ const Navbar = () => {
                     {user ? (
                         <>
                             <div className='navbar-logout-container'>
-                                <p>Logout</p>
+                                <p onClick={hanldeLogout}>Logout</p>
                             </div>
                             <div className='navbar-cart-container'>
                                 <Link to={'/cart'}>
