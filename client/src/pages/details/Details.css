@@ -7,16 +7,20 @@
 }
 
 .details-image-holder {
-    flex: 1;
+    flex: 0 0 50%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .details-image-holder img {
-    width: 100%;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .details-info-holder {
-    flex: 1;
+    flex: 0 0 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -61,7 +65,7 @@
     font-weight: 600;
 }
 
-.amount-container p.amount  {
+.amount-container p.amount {
     padding: 5px 15px;
     border: 1px solid teal;
     border-radius: 10px;
@@ -69,7 +73,7 @@
 }
 
 .amount-container p.add,
-.amount-container p.remove{
+.amount-container p.remove {
     font-size: 30px;
     cursor: pointer;
 }
