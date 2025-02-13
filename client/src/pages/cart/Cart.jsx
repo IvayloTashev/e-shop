@@ -3,6 +3,7 @@ import './Cart.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
@@ -17,11 +18,9 @@ const Cart = () => {
                     <h1>Your products</h1>
 
                     <div className='top-cart-section'>
-                        <button className='top-cart-btn'>Continue shoping</button>
-                        <div className='top-cart-description'>
-                            <p>Shoopping Bag(2)</p>
-                            <p>Your wishlist(1)</p>
-                        </div>
+                        <Link to={'/'}>
+                            <button className='top-cart-btn'>Continue shoping</button>
+                        </Link>
                         <button className='top-cart-btn'>Chekout now</button>
                     </div>
 
