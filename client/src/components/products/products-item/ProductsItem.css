@@ -10,11 +10,12 @@
 }
 
 .producs-item-container:hover {
-    border: 2px solid #7f7bdd;
+    border: 2px solid teal;
 }
 
 .producs-item-container:hover .producs-info-container {
-    background-color: #a6a2ff;
+    background-color: teal;
+    color: white;
 }
 
 .product-image-holder {

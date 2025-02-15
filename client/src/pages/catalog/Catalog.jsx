@@ -34,13 +34,13 @@ const Catalog = () => {
                     <div className='filter-holder'>
                         <p>Filter Products:</p>
                         <select name='brand' onChange={handleFilters}>
-                            <option value="">Brand:</option>
+                            <option value="">Brand</option>
                             <option value="Logitech">Logitech</option>
                             <option value="Razer">Razer</option>
                             <option value="SteelSeries">Steelseries</option>
                         </select>
                         <select name='color' onChange={handleFilters}>
-                            <option value="">Color:</option>
+                            <option value="">Color</option>
                             <option value="Black">Black</option>
                             <option value="White">White</option>
                             <option value="Blue">Blue</option>

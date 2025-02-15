@@ -21,7 +21,16 @@
 }
 
 .filter-holder select {
-    padding: 5px;
+    padding: 5px 10px;
+    border: 1px solid rgb(168, 168, 168);
+    background-color: white;
+    color: teal;
+    font-size: 18px;
+    font-weight: 600;
 }
 
+.filter-holder select option:hover{
+    color: teal;
+
+}
 
