@@ -1,9 +1,9 @@
 .navbar-container {
-    background-color: #9e9ccf;
+    background-color: black;
+    color: white;
 }
 
 .navbar-wrapper {
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -39,13 +39,13 @@
 
 .logo-container h1 {
     font-size: 30px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    padding: 8px;
 }
 
 .navbar-cart-container {
     font-size: 20px;
     cursor: pointer;
+    padding: 10px 0;
 }
 
 .navbar-register-container,
@@ -53,6 +53,7 @@
 .navbar-logout-container {
     font-size: 20px;
     font-weight: 500;
+    padding: 10px 0;
 }
 
 .navbar-register-container:hover,
@@ -60,4 +61,63 @@
 .navbar-cart-container:hover,
 .navbar-logout-container:hover {
     transform: scale(1.2);
+}
+
+.navbar-center {
+    overflow: hidden;
+}
+
+.navbar-dropdown-btn {
+    border: none;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 10px;
+}
+
+.navbar-dropdown-menu {
+    float: left;
+    overflow: hidden;
+    width: 125px;
+}
+
+.navbar-dropdown-menu:hover {
+    background-color: white;
+}
+
+.navbar-dropdown-menu:hover .navbar-dropdown-btn {
+    color: black;
+}
+
+.navbar-dropdown-menu:hover .navbar-dropdown-btn span {
+    color: red;
+}
+
+.navbar-dropdown-content {
+    display: none;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+    float: none;
+    display: block;
+    padding: 7px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+.navbar-dropdown-menu:hover .navbar-dropdown-content {
+    display: block;
 }
