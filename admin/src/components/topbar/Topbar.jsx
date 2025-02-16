@@ -2,9 +2,10 @@ import './Topbar.css'
 import React from 'react'
 import { Link, useNavigate} from 'react-router-dom';
 import { logoutUser } from '../../redux/apiCalls'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Topbar = () => {
+    const user = useSelector((state) => state.user.currentUser);
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
@@ -35,6 +36,7 @@ const Topbar = () => {
 
                 <div className='topbar-right'>
                     <p className='topbar-right-logout' onClick={handleLogout}>Logout</p>
+                    <img src={user?.image} alt="" />
                 </div>
 
             </div>

@@ -16,7 +16,7 @@ const Navbar = () => {
         e.preventDefault();
         logout(dispatch);
     }
-
+    
     return (
         <div className='navbar-container'>
 
@@ -54,6 +54,9 @@ const Navbar = () => {
                                         <ShoppingCartIcon />
                                     </Badge>
                                 </Link>
+                            </div>
+                            <div className='navbar-avatar-container'>
+                                <img src={user.image} alt="" />
                             </div>
                         </>
                     ) : (

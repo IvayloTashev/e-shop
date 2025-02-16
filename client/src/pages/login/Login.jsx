@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
 import { login } from '../../redux/apiCalls'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -35,8 +36,7 @@ const Login = () => {
                         >Login</button>
                     </form>
                     <div className='login-links'>
-                        <a href="">Create an new account.</a>
-                        <a href="">Forget password?</a>
+                        <Link to={'/register'}><p>Create an new account.</p></Link>
                     </div>
                 </div>
             </div>

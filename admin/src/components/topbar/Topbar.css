@@ -52,8 +52,21 @@
     font-weight: 500;
 }
 
+.topbar-right {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
 .topbar-right-logout {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.topbar-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
