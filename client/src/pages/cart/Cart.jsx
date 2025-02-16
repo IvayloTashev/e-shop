@@ -1,11 +1,13 @@
-import React from 'react'
 import './Cart.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
-import { useSelector } from 'react-redux'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { removeQuality, addQuality } from '../../redux/cartRedux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
+    const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
 
     return (
@@ -38,11 +40,12 @@ const Cart = () => {
 
                                     <div className='cart-product-price'>
                                         <div className='amount-container'>
-                                            <p className='remove'>-</p>
+                                            <p className='remove' onClick={() => dispatch(removeQuality(product._id))}>-</p>
                                             <p className='amount'>{product.quantity}</p>
-                                            <p className='add'>+</p>
+                                            <p className='add' onClick={() => dispatch(addQuality(product._id))}>+</p>
                                         </div>
                                         <p>$ {product.price * product.quantity}</p>
+                                        <button><DeleteIcon /></button>
                                     </div>
                                 </div>
                             ))}
