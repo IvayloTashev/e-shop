@@ -2,7 +2,7 @@ import './Cart.css'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
 import DeleteIcon from '@mui/icons-material/Delete';
-import { removeQuality, addQuality } from '../../redux/cartRedux'
+import { removeQuality, addQuality, deleteProduct } from '../../redux/cartRedux'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -23,7 +23,6 @@ const Cart = () => {
                         <Link to={'/'}>
                             <button className='top-cart-btn'>Continue shoping</button>
                         </Link>
-                        <button className='top-cart-btn'>Chekout now</button>
                     </div>
 
                     <div className='bot-cart-section'>
@@ -45,7 +44,7 @@ const Cart = () => {
                                             <p className='add' onClick={() => dispatch(addQuality(product._id))}>+</p>
                                         </div>
                                         <p>$ {product.price * product.quantity}</p>
-                                        <button><DeleteIcon /></button>
+                                        <button onClick={() => dispatch(deleteProduct(product._id))}><DeleteIcon /></button>
                                     </div>
                                 </div>
                             ))}
