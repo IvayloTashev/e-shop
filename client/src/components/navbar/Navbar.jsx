@@ -16,7 +16,7 @@ const Navbar = () => {
         e.preventDefault();
         logout(dispatch);
     }
-    
+
     return (
         <div className='navbar-container'>
 

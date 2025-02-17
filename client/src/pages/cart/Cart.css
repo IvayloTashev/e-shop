@@ -43,6 +43,7 @@
 .bot-cart-section {
     display: flex;
     justify-content: space-between;
+    min-height: 510px;
 }
 
 .cart-info-section {
@@ -50,7 +51,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
 }
 
 .cart-summary-section {
