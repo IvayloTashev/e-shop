@@ -1,6 +1,6 @@
 import './Topbar.css'
 import React from 'react'
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../redux/apiCalls'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -34,11 +34,16 @@ const Topbar = () => {
                     </ul>
                 </div>
 
-                <div className='topbar-right'>
-                    <p className='topbar-right-logout' onClick={handleLogout}>Logout</p>
-                    <img src={user?.image} alt="" />
-                </div>
+                {user ? (
+                    <div className='topbar-right'>
+                        <p className='topbar-right-logout' onClick={handleLogout}>Logout</p>
+                        <img src={user?.image} alt="" />
+                    </div>
+                ) : (
+                    <div className='topbar-right'>
 
+                    </div>
+                )}
             </div>
 
         </div>
