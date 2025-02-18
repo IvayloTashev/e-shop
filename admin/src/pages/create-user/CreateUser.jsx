@@ -26,7 +26,7 @@ const CreateUser = () => {
 
     const handleCreate = (e) => {
         e.preventDefault();
-        const user = {...inputs, ...adminAccess};
+        const user = { ...inputs, ...adminAccess };
         createUser(dispatch, user);
     }
 
@@ -38,6 +38,11 @@ const CreateUser = () => {
         <div className='create-user-container'>
             <h2 className='create-user-title'>Create New User</h2>
             <form className='create-user-form'>
+                <div className='create-user-form-item'>
+                    <label className='create-user-form-label'>Image URL</label>
+                    <input name='image' type="text" className='create-user-form-input' placeholder='Image URL' onChange={handleChange} />
+                </div>
+
                 <div className='create-user-form-item'>
                     <label className='create-user-form-label'>Username</label>
                     <input name='username' type="text" className='create-user-form-input' placeholder='Username' onChange={handleChange} />

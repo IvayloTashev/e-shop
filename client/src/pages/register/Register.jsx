@@ -27,6 +27,7 @@ const Register = () => {
                 <div className='register-wrapper'>
                     <h1>Create an account</h1>
                     <form action="">
+                        <input name='image' type="text" placeholder='Image URL' onChange={handleChange} />
                         <input name='username' type="text" placeholder='username' onChange={handleChange} />
                         <input name='email' type="text" placeholder='email' onChange={handleChange} />
                         <input name='password' type="password" placeholder='password' onChange={handleChange} />
